@@ -135,14 +135,14 @@
 <!-- Header -->
   <header>
     <div class="logo">Dubai Abaya Fashion</div>
-    <div>যোগাযোগ: +8801XXXXXXXXX</div>
+    <div>যোগাযোগ:+971567439129</div>
   </header>
 
   <!-- Hero Banner -->
   <div class="hero-banner">
     <h1>দুবাই আবায়া ফ্যাশন</h1>
     <p>প্রিমিয়াম কোয়ালিটি কালারিং আবায়া ও বোরকা কালেকশন</p>
-    <a href="tel:+8801XXXXXXXXX" class="contact-badge">📞 সরাসরি কল বা অর্ডার করুন: +8801XXXXXXXXX</a>
+    <a href="tel:" class="contact-badge">📞 সরাসরি কল বা অর্ডার করুন: </a>
   </div>
 
   <!-- Main Products -->
