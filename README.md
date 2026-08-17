@@ -3,241 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dubai Abaya Fashion</title>
+  <title>Dubai Abaya & Burqa Collection</title>
   <style>
+    /* Reset & General Styles */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      background-color: #f8f6f0;
+      background-color: #f8f9fa;
       color: #333;
-      padding: 20px 10px;
     }
 
-    .container {
-      max-width: 450px;
-      margin: 0 auto;
-    }
-
-    /* Header Banner */
-    .hero-card {
-      background-color: #2b303a;
+    /* Header Section */
+    header {
+      background-color: #111;
       color: #fff;
-      padding: 25px 20px;
-      border-radius: 16px;
+      padding: 20px;
       text-align: center;
-      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    .hero-card .subtitle {
-      color: #d4a359;
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 1.5px;
-      margin-bottom: 8px;
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 15px;
     }
 
-    .hero-card h1 {
-      font-size: 22px;
-      font-family: Georgia, serif;
-      margin-bottom: 12px;
+    /* Gallery Grid Structure */
+    .abaya-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
 
-    .hero-card p {
-      font-size: 13px;
-      color: #ccc;
-      line-height: 1.4;
-      margin-bottom: 18px;
+    /* Product Card Style */
+    .abaya-card {
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .btn-main-wa {
-      display: inline-block;
-      background-color: #25d366;
-      color: #fff;
-      padding: 10px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
+    .abaya-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
 
-    /* Search Bar */
-    .search-box {
-      width: 100%;
-      padding: 12px 15px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      margin-bottom: 15px;
-      font-size: 13px;
-    }
-
-    /* Filter Badges */
-    .filters {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 20px;
-      overflow-x: auto;
-    }
-
-    .filter-btn {
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-      border: 1px solid #ddd;
-      background: #fff;
-    }
-
-    .filter-btn.active {
-      background: #111;
-      color: #fff;
-      border-color: #111;
-    }
-
-    .section-heading {
-      font-family: Georgia, serif;
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-
-    /* Product Cards */
-    .product-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .product-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .image-container {
-      position: relative;
+    /* Image Wrapper & Settings */
+    .img-box {
       width: 100%;
       height: 380px;
-      background-color: #eee;
-      border-radius: 8px;
       overflow: hidden;
-      margin-bottom: 10px;
+      background-color: #eee;
     }
 
-    .image-container img {
+    .img-box img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover; /* এটি ছবি না কেটে সুন্দরভাবে ফিট করবে */
       display: block;
+      transition: transform 0.5s ease;
     }
 
-    .badge {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background: #000;
-      color: #fff;
-      font-size: 10px;
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-weight: bold;
+    .abaya-card:hover .img-box img {
+      transform: scale(1.05); /* হোভার করলে ছবি জুমিং ইফেক্ট দেবে */
     }
 
-    .product-title {
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #444;
-    }
-
-    .btn-card-wa {
-      display: block;
-      width: 100%;
+    /* Title Details */
+    .abaya-info {
+      padding: 15px;
       text-align: center;
-      background-color: #25d366;
-      color: #fff;
-      padding: 10px 0;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 13px;
+    }
+
+    .abaya-info h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #222;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
   </style>
 </head>
 <body>
 
+  <header>
+    <h1>LUXURY ABAYA COLLECTION</h1>
+  </header>
+
   <div class="container">
+    <div class="abaya-grid">
 
-    <!-- Top Banner -->
-    <div class="hero-card">
-      <div class="subtitle">PREMIUM ISLAMIC WEAR</div>
-      <h1>Elegant Abaya &<br>Burqa Collection</h1>
-      <p>Discover elegant Dubai-inspired abayas, burqas, embroidered abayas, niqabs and shaylas. Custom sizes available.</p>
-      <a href="https://wa.me/971567439129" class="btn-main-wa">WhatsApp Inquiry</a>
-    </div>
-
-    <!-- Search input -->
-    <input type="text" class="search-box" placeholder="Search abaya, burqa, embroidered...">
-
-    <!-- Filter Buttons -->
-    <div class="filters">
-      <button class="filter-btn active">All</button>
-      <button class="filter-btn">Abaya</button>
-      <button class="filter-btn">Burqa</button>
-      <button class="filter-btn">Embroidered</button>
-    </div>
-
-    <h2 class="section-heading">Our Designs</h2>
-
-    <!-- Product List (One by One) -->
-    <div class="product-list">
-
-      <!-- Item 1 -->
-      <div class="product-card">
-        <div class="image-container">
-          <span class="badge">Abaya</span>
-          <img src="images/abaya1.jpg" alt="Original Abaya Design 01">
+      <!-- Card 1 -->
+      <div class="abaya-card">
+        <div class="img-box">
+          <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" alt="Embroidered Abaya">
         </div>
-        <div class="product-title">Original Abaya Design 01</div>
-        <a href="https://wa.me/971567439129?text=I%20want%20to%20order%20Original%20Abaya%20Design%2001" class="btn-card-wa" target="_blank">Order on WhatsApp</a>
+        <div class="abaya-info">
+          <h3>Embroidered Black Abaya</h3>
+        </div>
       </div>
 
-      <!-- Item 2 -->
-      <div class="product-card">
-        <div class="image-container">
-          <span class="badge">Burqa</span>
-          <img src="images/abaya2.jpg" alt="Original Abaya Design 02">
+      <!-- Card 2 -->
+      <div class="abaya-card">
+        <div class="img-box">
+          <img src="https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=600&q=80" alt="Stylish Mauve Abaya">
         </div>
-        <div class="product-title">Original Abaya Design 02</div>
-        <a href="https://wa.me/971567439129?text=I%20want%20to%20order%20Original%20Abaya%20Design%2002" class="btn-card-wa" target="_blank">Order on WhatsApp</a>
+        <div class="abaya-info">
+          <h3>Stylish Mauve Abaya</h3>
+        </div>
       </div>
 
-      <!-- Item 3 -->
-      <div class="product-card">
-        <div class="image-container">
-          <span class="badge">Embroidered</span>
-          <img src="images/abaya3.jpg" alt="Original Abaya Design 03">
+      <!-- Card 3 -->
+      <div class="abaya-card">
+        <div class="img-box">
+          <img src="https://images.unsplash.com/photo-1583391733975-299f242588a4?auto=format&fit=crop&w=600&q=80" alt="Brown Designer Abaya">
         </div>
-        <div class="product-title">Original Abaya Design 03</div>
-        <a href="https://wa.me/971567439129?text=I%20want%20to%20order%20Original%20Abaya%20Design%2003" class="btn-card-wa" target="_blank">Order on WhatsApp</a>
+        <div class="abaya-info">
+          <h3>Brown Designer Abaya</h3>
+        </div>
       </div>
 
-      <!-- Item 4 -->
-      <div class="product-card">
-        <div class="image-container">
-          <span class="badge">Abaya</span>
-          <img src="images/abaya4.jpg" alt="Original Abaya Design 04">
+      <!-- Card 4 -->
+      <div class="abaya-card">
+        <div class="img-box">
+          <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80" alt="Navy Blue Lace Abaya">
         </div>
-        <div class="product-title">Original Abaya Design 04</div>
-        <a href="https://wa.me/971567439129?text=I%20want%20to%20order%20Original%20Abaya%20Design%2004" class="btn-card-wa" target="_blank">Order on WhatsApp</a>
+        <div class="abaya-info">
+          <h3>Navy Blue Lace Abaya</h3>
+        </div>
       </div>
 
     </div>
-
   </div>
 
 </body>
