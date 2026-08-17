@@ -1,4 +1,5 @@
 
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -43,7 +44,7 @@
 
         /* Hero Banner */
         .banner {
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.pexels.com/photos/10540483/pexels-photo-10540483.jpeg?auto=compress&cs=tinysrgb&w=1200');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://m.media-amazon.com/images/I/61Nl-XjL-XL._AC_UY1100_.jpg');
             background-size: cover;
             background-position: center;
             color: #ffffff;
@@ -182,7 +183,7 @@
 
             <!-- Item 1 -->
             <div class="product-card">
-                <img src="https://images.pexels.com/photos/10540483/pexels-photo-10540483.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Black Silk Abaya">
+                <img src="https://m.media-amazon.com/images/I/61Nl-XjL-XL._AC_UY1100_.jpg" alt="Black Silk Abaya">
                 <div class="product-info">
                     <div class="product-title">Black Premium Nida Abaya</div>
                     <div class="product-details">
@@ -196,7 +197,7 @@
 
             <!-- Item 2 -->
             <div class="product-card">
-                <img src="https://images.pexels.com/photos/11833500/pexels-photo-11833500.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Navy Blue Abaya">
+                <img src="https://m.media-amazon.com/images/I/51rY5HSo+sL._AC_UY1100_.jpg" alt="Navy Blue Abaya">
                 <div class="product-info">
                     <div class="product-title">Royal Navy Blue Abaya</div>
                     <div class="product-details">
@@ -210,7 +211,7 @@
 
             <!-- Item 3 -->
             <div class="product-card">
-                <img src="https://images.pexels.com/photos/10540484/pexels-photo-10540484.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Maroon Abaya">
+                <img src="https://m.media-amazon.com/images/I/61O2OByqRdL._AC_UY1100_.jpg" alt="Maroon Abaya">
                 <div class="product-info">
                     <div class="product-title">Maroon Lace Work Abaya</div>
                     <div class="product-details">
@@ -224,7 +225,7 @@
 
             <!-- Item 4 -->
             <div class="product-card">
-                <img src="https://images.pexels.com/photos/10540485/pexels-photo-10540485.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Olive Green Abaya">
+                <img src="https://m.media-amazon.com/images/I/513yInR2BVL._AC_UY1100_.jpg" alt="Olive Green Abaya">
                 <div class="product-info">
                     <div class="product-title">Olive Green Dubai Style</div>
                     <div class="product-details">
@@ -238,7 +239,7 @@
 
             <!-- Item 5 -->
             <div class="product-card">
-                <img src="https://images.pexels.com/photos/11833501/pexels-photo-11833501.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Beige Abaya">
+                <img src="https://m.media-amazon.com/images/I/51wY8RshdFL._AC_UY1100_.jpg" alt="Beige Abaya">
                 <div class="product-info">
                     <div class="product-title">Beige Champagne Abaya</div>
                     <div class="product-details">
@@ -252,7 +253,7 @@
 
             <!-- Item 6 -->
             <div class="product-card">
-                <img src="https://images.pexels.com/photos/10540486/pexels-photo-10540486.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Grey Abaya">
+                <img src="https://m.media-amazon.com/images/I/51G8-nLal5L._AC_UY1100_.jpg" alt="Grey Abaya">
                 <div class="product-info">
                     <div class="product-title">Casual Charcoal Grey Abaya</div>
                     <div class="product-details">
