@@ -1,92 +1,69 @@
+<abaya1.jpg⁠, ⁠abaya2.jpg⁠, ⁠abaya3.jpg⁠, ⁠abaya4.jpg">
+
+
+
+
+
 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dubai Abaya & Burqa Collection</title>
+  <title>Luxury Abaya Collection</title>
   <style>
-    /* Reset & General Styles */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      background-color: #f8f9fa;
-      color: #333;
+      background-color: #f5f5f5;
     }
 
-    /* Header Section */
     header {
-      background-color: #111;
+      background-color: #000;
       color: #fff;
       padding: 20px;
       text-align: center;
       letter-spacing: 2px;
-      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: bold;
     }
 
-    /* Main Container */
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 30px auto;
       padding: 0 15px;
     }
 
-    /* Gallery Grid Structure */
     .abaya-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    /* Product Card Style */
     .abaya-card {
-      background: #ffffff;
-      border-radius: 10px;
+      background: #fff;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .abaya-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Image Wrapper & Settings */
-    .img-box {
-      width: 100%;
-      height: 380px;
-      overflow: hidden;
-      background-color: #eee;
-    }
-
-    .img-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* এটি ছবি না কেটে সুন্দরভাবে ফিট করবে */
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .abaya-card:hover .img-box img {
-      transform: scale(1.05); /* হোভার করলে ছবি জুমিং ইফেক্ট দেবে */
-    }
-
-    /* Title Details */
-    .abaya-info {
-      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-align: center;
     }
 
-    .abaya-info h3 {
-      font-size: 16px;
-      font-weight: 600;
+    .abaya-card img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .abaya-title {
+      padding: 15px;
+      font-size: 15px;
+      font-weight: bold;
       color: #222;
-      letter-spacing: 0.5px;
       text-transform: uppercase;
     }
   </style>
@@ -94,7 +71,7 @@
 <body>
 
   <header>
-    <h1>LUXURY ABAYA COLLECTION</h1>
+    LUXURY ABAYA COLLECTION
   </header>
 
   <div class="container">
@@ -102,42 +79,26 @@
 
       <!-- Card 1 -->
       <div class="abaya-card">
-        <div class="img-box">
-          <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" alt="Embroidered Abaya">
-        </div>
-        <div class="abaya-info">
-          <h3>Embroidered Black Abaya</h3>
-        </div>
+        <img src="abaya1.jpg" alt="Embroidered Black Abaya">
+        <div class="abaya-title">EMBROIDERED BLACK ABAYA</div>
       </div>
 
       <!-- Card 2 -->
       <div class="abaya-card">
-        <div class="img-box">
-          <img src="https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=600&q=80" alt="Stylish Mauve Abaya">
-        </div>
-        <div class="abaya-info">
-          <h3>Stylish Mauve Abaya</h3>
-        </div>
+        <img src="abaya2.jpg" alt="Stylish Mauve Abaya">
+        <div class="abaya-title">STYLISH MAUVE ABAYA</div>
       </div>
 
       <!-- Card 3 -->
       <div class="abaya-card">
-        <div class="img-box">
-          <img src="https://images.unsplash.com/photo-1583391733975-299f242588a4?auto=format&fit=crop&w=600&q=80" alt="Brown Designer Abaya">
-        </div>
-        <div class="abaya-info">
-          <h3>Brown Designer Abaya</h3>
-        </div>
+        <img src="abaya3.jpg" alt="Brown Designer Abaya">
+        <div class="abaya-title">BROWN DESIGNER ABAYA</div>
       </div>
 
       <!-- Card 4 -->
       <div class="abaya-card">
-        <div class="img-box">
-          <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80" alt="Navy Blue Lace Abaya">
-        </div>
-        <div class="abaya-info">
-          <h3>Navy Blue Lace Abaya</h3>
-        </div>
+        <img src="abaya4.jpg" alt="Navy Blue Lace Abaya">
+        <div class="abaya-title">NAVY BLUE LACE ABAYA</div>
       </div>
 
     </div>
