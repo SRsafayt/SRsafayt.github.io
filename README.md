@@ -1,11 +1,6 @@
-<abaya1.jpg⁠, ⁠abaya2.jpg⁠, ⁠abaya3.jpg⁠, ⁠abaya4.jpg">
+<img width="414" height="896" alt="image" src="https://github.com/user-attachments/assets/d138d601-7846-4f98-8894-a22868e5950a" />
 
-
-
-
-
-
-<html lang="en">
+html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
