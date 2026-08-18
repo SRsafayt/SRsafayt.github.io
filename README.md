@@ -1,16 +1,5 @@
-from pathlib import Path
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/2f90c8c4-20b4-4416-bb74-79cc8a9bfbdb" />
 
-import shutil, zipfile
-
-src = Path("/mnt/data/B9AB6F58-F258-4DE5-A2C0-96259021484F.jpeg")
-
-root = Path("/mnt/data/dubai-abaya-final")
-
-root.mkdir(exist_ok=True)
-
-shutil.copy2(src, root / "hero-design.jpeg")
-
-html = r'''<!DOCTYPE html>
 
 <html lang="en">
 
@@ -252,7 +241,7 @@ a{text-decoration:none;color:inherit}
 
 <div><h3>Customer Service</h3><a href="#about">About Us</a><a href="#contact">Contact Us</a><a href="#contact">Shipping & Delivery</a><a href="#contact">Privacy Policy</a><a href="#contact">Terms & Conditions</a></div>
 
-<div><h3>Contact Us</h3><p>WhatsApp: +971 56 743 9129</p><p>Dubai, United Arab Emirates</p><p>info@dubaiabayafashion.com</p></div>
+<div><h3>Contact Us</h3><p>WhatsApp: +971 56 743 9129</p><p>Dubai, United Arab Emirates</p><p></p></div>
 
 </div>
 
