@@ -1,4 +1,358 @@
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/2f90c8c4-20b4-4416-bb74-79cc8a9bfbdb" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Abaya Fashion</title>
+    <style>
+        /* Base Reset & Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Banner Section */
+        .hero-banner {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('hero-bg.jpg') center/cover no-repeat;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .hero-banner h3 {
+            color: #d4af37;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .hero-banner h1 {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero-banner p {
+            color: #cccccc;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-gold {
+            background-color: #d4af37;
+            color: #000;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+
+        /* Main Content Layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 15px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .section-title h2 {
+            font-size: 24px;
+            color: #111;
+        }
+
+        .shop-layout {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Sidebar Category */
+        .sidebar {
+            width: 250px;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .sidebar h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 5px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* Product Grid Desktop */
+        .product-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        /* Separate Product Cards */
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .product-card h3 {
+            font-size: 14px;
+            color: #222;
+            margin: 10px 0 5px 0;
+        }
+
+        .product-card span {
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* WhatsApp Banner */
+        .whatsapp-banner {
+            background-color: #000000;
+            color: #fff;
+            padding: 15px 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #d4af37;
+        }
+
+        .whatsapp-btn {
+            background-color: #d4af37;
+            color: #000;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* ========================================== */
+        /* MOBILE RESPONSIVE STYLES (Max-width: 768px) */
+        /* ========================================== */
+        @media (max-width: 768px) {
+            .hero-banner {
+                padding: 40px 15px;
+            }
+
+            .hero-banner h1 {
+                font-size: 22px;
+            }
+
+            .hero-banner p {
+                font-size: 12px;
+            }
+
+            .btn-container {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .shop-layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            /* 2 Columns layout on Mobile for Separate Product Display */
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .product-card {
+                padding: 8px;
+            }
+
+            .product-card img {
+                height: 180px;
+            }
+
+            .product-card h3 {
+                font-size: 12px;
+            }
+
+            .whatsapp-banner {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Option for 1 Column layout on very small mobile screens if preferred */
+            /*
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-banner">
+        <h3>WELCOME TO</h3>
+        <h1>DUBAI ABAYA FASHION</h1>
+        <p>MODESTY IS THE NEW LUXURY<br>PREMIUM ABAYAS & BURQAS CRAFTED FOR ELEGANCE & COMFORT</p>
+        <div class="btn-container">
+            <a href="#" class="btn btn-gold">EXPLORE COLLECTION &rarr;</a>
+            <a href="#" class="btn btn-outline">VIEW NEW ARRIVALS</a>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="main-container">
+        <div class="section-title">
+            <h2>OUR EXCLUSIVE COLLECTION</h2>
+            <p>Premium Abayas & Burqas</p>
+        </div>
+
+        <div class="shop-layout">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar">
+                <h4>SHOP BY CATEGORY</h4>
+                <ul>
+                    <li>All Collections &rsaquo;</li>
+                    <li>Abayas &rsaquo;</li>
+                    <li>Burqas &rsaquo;</li>
+                    <li>New Arrivals &rsaquo;</li>
+                    <li>Best Sellers &rsaquo;</li>
+                </ul>
+            </aside>
+
+            <!-- Product Grid Options -->
+            <section class="product-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x400" alt="Black Royal Abaya">
+                    <h3>BLACK ROYAL ABAYA</h3>
+                    <span>New Collection</span>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x400" alt="Navy Blue Abaya">
+                    <h3>NAVY BLUE ABAYA</h3>
+                    <span>New Collection</span>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x400" alt="Mocha Brown Abaya">
+                    <h3>MOCHA BROWN ABAYA</h3>
+                    <span>New Collection</span>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x400" alt="Emerald Green Abaya">
+                    <h3>EMERALD GREEN ABAYA</h3>
+                    <span>New Collection</span>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x400" alt="Beige Abaya">
+                    <h3>BEIGE ABAYA</h3>
+                    <span>New Collection</span>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x400" alt="Designer Black Abaya">
+                    <h3>DESIGNER BLACK ABAYA</h3>
+                    <span>New Collection</span>
+                </div>
+            </section>
+        </div>
+
+        <!-- WhatsApp Support Banner -->
+        <div class="whatsapp-banner">
+            <div>
+                <p>HAVE A QUESTION OR WANT TO PLACE AN ORDER?</p>
+                <h3>+971 56 743 9129</h3>
+            </div>
+            <a href="https://wa.me/971567439129" class="whatsapp-btn">CHAT ON WHATSAPP</a>
+        </div>
+    </main>
+
+</body>
+</html>
 
 
 <html lang="en">
