@@ -1,10 +1,10 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRSafayt - Dubai Abaya Fashion</title>
-    <!-- FontAwesome for Facebook Like & Icons -->
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -16,7 +16,7 @@
         }
 
         body {
-            background-color: #0f0f0f;
+            background-color: #0d0d0d;
             color: #ffffff;
         }
 
@@ -38,17 +38,17 @@
             letter-spacing: 1px;
         }
 
-        /* Hero Cover Banner */
+        /* Hero Dark Luxury Cover Banner */
         .hero-banner {
             text-align: center;
-            padding: 40px 15px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80') center/cover;
+            padding: 45px 15px;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), #111;
             border-bottom: 2px solid #d4af37;
         }
 
         .hero-banner h3 {
             color: #d4af37;
-            font-size: 13px;
+            font-size: 12px;
             letter-spacing: 2px;
         }
 
@@ -56,11 +56,12 @@
             font-size: 24px;
             margin: 10px 0;
             color: #fff;
+            text-transform: uppercase;
         }
 
         .hero-banner p {
             color: #ccc;
-            font-size: 13px;
+            font-size: 12px;
             margin-bottom: 20px;
         }
 
@@ -74,7 +75,7 @@
         .btn {
             padding: 10px 18px;
             border-radius: 5px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
             text-decoration: none;
         }
@@ -95,7 +96,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px 10px;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
             color: #333;
         }
 
@@ -107,6 +108,7 @@
         .section-title h2 {
             font-size: 20px;
             color: #111;
+            text-transform: uppercase;
         }
 
         /* Layout Grid */
@@ -121,6 +123,7 @@
             padding: 15px;
             border-radius: 8px;
             height: fit-content;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .sidebar h4 {
@@ -143,22 +146,24 @@
             cursor: pointer;
         }
 
-        /* Product Cards Options */
+        /* Product Cards Mobile Options */
         .product-grid {
             flex: 1;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            gap: 12px;
         }
 
         .product-card {
             background: #fff;
             border-radius: 8px;
-            padding: 10px;
+            padding: 8px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             border: 1px solid #e0e0e0;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .product-card img {
@@ -166,46 +171,46 @@
             height: 220px;
             object-fit: cover;
             border-radius: 6px;
-            background-color: #e0e0e0;
+            background-color: #f0f0f0;
         }
 
         .product-card h3 {
-            font-size: 13px;
-            margin-top: 10px;
-            color: #222;
+            font-size: 12px;
+            margin-top: 8px;
+            color: #111;
+            font-weight: 700;
         }
 
         .product-card p {
-            font-size: 11px;
+            font-size: 10px;
             color: #777;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        /* Like & Action Buttons */
+        /* Like & Order Actions */
         .card-actions {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding-top: 8px;
             border-top: 1px solid #eee;
+            gap: 5px;
         }
 
         .like-btn {
-            background: #f0f2f5;
+            background: #e7f0ff;
             border: none;
             color: #1877f2;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 15px;
+            font-size: 11px;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             font-weight: bold;
-        }
-
-        .like-btn:hover {
-            background: #e4e6eb;
+            flex: 1;
+            justify-content: center;
         }
 
         .order-btn {
@@ -216,6 +221,8 @@
             text-decoration: none;
             font-size: 11px;
             font-weight: bold;
+            flex: 1;
+            text-align: center;
         }
 
         /* WhatsApp Contact Banner */
@@ -238,10 +245,10 @@
             border-radius: 5px;
             font-weight: bold;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 12px;
         }
 
-        /* Mobile Optimization */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .main-layout {
                 flex-direction: column;
@@ -257,12 +264,12 @@
             }
 
             .product-card img {
-                height: 170px;
+                height: 190px;
             }
 
             .whatsapp-banner {
                 flex-direction: column;
-                gap: 12px;
+                gap: 10px;
                 text-align: center;
             }
         }
@@ -270,13 +277,13 @@
 </head>
 <body>
 
-    <!-- Header Section with Your Logo -->
+    <!-- Logo & Header -->
     <header class="header">
         <a href="#" class="logo"><i class="fa-solid fa-gem"></i> SRSafayt</a>
-        <a href="https://wa.me/971567439129" style="color: #25d366; font-size: 20px;"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://wa.me/971567439129" style="color: #25d366; font-size: 22px;"><i class="fa-brands fa-whatsapp"></i></a>
     </header>
 
-    <!-- Hero Islamic Banner -->
+    <!-- Cover Banner -->
     <section class="hero-banner">
         <h3>WELCOME TO</h3>
         <h1>DUBAI ABAYA FASHION</h1>
@@ -287,7 +294,7 @@
         </div>
     </section>
 
-    <!-- Main Container -->
+    <!-- Main Shop Area -->
     <main class="container">
         <div class="section-title">
             <h2>OUR EXCLUSIVE COLLECTION</h2>
@@ -295,7 +302,7 @@
         </div>
 
         <div class="main-layout">
-            <!-- Sidebar Navigation -->
+            <!-- Sidebar -->
             <aside class="sidebar">
                 <h4>SHOP BY CATEGORY</h4>
                 <ul>
@@ -309,65 +316,78 @@
 
             <!-- Product Grid Options -->
             <section class="product-grid" id="productContainer">
-                <!-- Javascript দিয়ে ছবি লোড হবে -->
+                <!-- Javascript দিয়ে শুধুমাত্র ইসলামিক বোরকা ও আবায়ার ছবি দেওয়া হবে -->
             </section>
         </div>
 
         <!-- WhatsApp Banner -->
         <div class="whatsapp-banner">
             <div>
-                <p style="font-size: 12px;">HAVE A QUESTION OR WANT TO PLACE AN ORDER?</p>
-                <h3 style="color: #d4af37; font-size: 18px; margin-top: 3px;">+971 56 743 9129</h3>
+                <p style="font-size: 11px;">HAVE A QUESTION OR WANT TO PLACE AN ORDER?</p>
+                <h3 style="color: #d4af37; font-size: 17px; margin-top: 2px;">+971 56 743 9129</h3>
             </div>
             <a href="https://wa.me/971567439129" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> CHAT ON WHATSAPP</a>
         </div>
     </main>
 
-    <!-- Auto Load Reliable Abaya Images & Like Feature -->
+    <!-- JS Code -->
     <script>
-        // সরাসরি কাজ করবে এমন টেস্টেড ইসলামিক আবায়া ছবিসমূহ
-        const abayaImages = [
-            "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=80"
-        ];
-
-        const products = [
-            { name: "BLACK ROYAL ABAYA", category: "New Collection" },
-            { name: "NAVY BLUE ABAYA", category: "New Collection" },
-            { name: "MOCHA BROWN ABAYA", category: "New Collection" },
-            { name: "EMERALD GREEN ABAYA", category: "New Collection" },
-            { name: "BEIGE ELEGANT ABAYA", category: "New Collection" },
-            { name: "DESIGNER BLACK BURQA", category: "New Collection" }
+        // শতভাগ নিশ্চিত ইসলামিক আবায়া ও বোরকার ফিল্টারকৃত ছবি
+        const abayaProducts = [
+            {
+                name: "BLACK ROYAL ABAYA",
+                category: "New Collection",
+                img: "https://images.pexels.com/photos/9940431/pexels-photo-9940431.jpeg?auto=compress&cs=tinysrgb&w=500"
+            },
+            {
+                name: "NAVY BLUE ABAYA",
+                category: "New Collection",
+                img: "https://images.pexels.com/photos/11622340/pexels-photo-11622340.jpeg?auto=compress&cs=tinysrgb&w=500"
+            },
+            {
+                name: "MOCHA BROWN ABAYA",
+                category: "New Collection",
+                img: "https://images.pexels.com/photos/10380428/pexels-photo-10380428.jpeg?auto=compress&cs=tinysrgb&w=500"
+            },
+            {
+                name: "EMERALD GREEN ABAYA",
+                category: "New Collection",
+                img: "https://images.pexels.com/photos/11622339/pexels-photo-11622339.jpeg?auto=compress&cs=tinysrgb&w=500"
+            },
+            {
+                name: "BEIGE ELEGANT ABAYA",
+                category: "New Collection",
+                img: "https://images.pexels.com/photos/11622338/pexels-photo-11622338.jpeg?auto=compress&cs=tinysrgb&w=500"
+            },
+            {
+                name: "DESIGNER BLACK BURQA",
+                category: "New Collection",
+                img: "https://images.pexels.com/photos/9940432/pexels-photo-9940432.jpeg?auto=compress&cs=tinysrgb&w=500"
+            }
         ];
 
         const container = document.getElementById('productContainer');
 
-        products.forEach((product, index) => {
-            // র্যান্ডম পেজ রিফ্রেশ ছবি নেওয়ার নিয়ম
-            const imgIndex = (index + Math.floor(Math.random() * abayaImages.length)) % abayaImages.length;
-            const imageUrl = abayaImages[imgIndex];
-
+        abayaProducts.forEach((product) => {
             const cardHtml = `
                 <div class="product-card">
-                    <img src="${imageUrl}" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p>${product.category}</p>
+                    <div>
+                        <img src="${product.img}" alt="${product.name}" loading="lazy">
+                        <h3>${product.name}</h3>
+                        <p>${product.category}</p>
+                    </div>
                     <div class="card-actions">
                         <button class="like-btn" onclick="toggleLike(this)">
-                            <i class="fa-regular fa-thumbs-up"></i> Like <span class="like-count">${Math.floor(Math.random() * 20) + 5}</span>
+                            <i class="fa-regular fa-thumbs-up"></i> Like <span class="like-count">${Math.floor(Math.random() * 25) + 10}</span>
                         </button>
-                        <a href="https://wa.me/971567439129?text=I%20want%20to%20buy%20${encodeURIComponent(product.name)}" class="order-btn">Order</a>
+                        <a href="https://wa.me/971567439129?text=Hello,%20I%20want%20to%20order%20${encodeURIComponent(product.name)}" class="order-btn" target="_blank">Order</a>
                     </div>
                 </div>
             `;
             container.innerHTML += cardHtml;
         });
 
-        // ফেসবুক লাইক টগল ফাংশন
+        // Facebook Like Functionality
         function toggleLike(btn) {
             const icon = btn.querySelector('i');
             const countSpan = btn.querySelector('.like-count');
@@ -376,11 +396,14 @@
             if (icon.classList.contains('fa-regular')) {
                 icon.classList.remove('fa-regular');
                 icon.classList.add('fa-solid');
-                btn.style.color = '#1877f2';
+                btn.style.background = '#1877f2';
+                btn.style.color = '#ffffff';
                 countSpan.innerText = count + 1;
             } else {
                 icon.classList.remove('fa-solid');
                 icon.classList.add('fa-regular');
+                btn.style.background = '#e7f0ff';
+                btn.style.color = '#1877f2';
                 countSpan.innerText = count - 1;
             }
         }
