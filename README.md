@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRSafayt - Dubai Abaya Fashion</title>
+    <title>SRSafayt - Dubai Abaya Collection</title>
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -22,7 +22,7 @@
 
         /* Top Header & Logo */
         .header {
-            background-color: #000;
+            background-color: #000000;
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
@@ -38,11 +38,11 @@
             letter-spacing: 1px;
         }
 
-        /* Hero Dark Luxury Cover Banner */
+        /* Hero Banner */
         .hero-banner {
             text-align: center;
-            padding: 45px 15px;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), #111;
+            padding: 40px 15px;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), #111111;
             border-bottom: 2px solid #d4af37;
         }
 
@@ -55,12 +55,12 @@
         .hero-banner h1 {
             font-size: 24px;
             margin: 10px 0;
-            color: #fff;
+            color: #ffffff;
             text-transform: uppercase;
         }
 
         .hero-banner p {
-            color: #ccc;
+            color: #cccccc;
             font-size: 12px;
             margin-bottom: 20px;
         }
@@ -82,12 +82,12 @@
 
         .btn-gold {
             background-color: #d4af37;
-            color: #000;
+            color: #000000;
         }
 
         .btn-outline {
-            border: 1px solid #fff;
-            color: #fff;
+            border: 1px solid #ffffff;
+            color: #ffffff;
         }
 
         /* Main Container */
@@ -97,7 +97,7 @@
             margin: 0 auto;
             padding: 20px 10px;
             background-color: #f8f9fa;
-            color: #333;
+            color: #333333;
         }
 
         .section-title {
@@ -107,7 +107,7 @@
 
         .section-title h2 {
             font-size: 20px;
-            color: #111;
+            color: #111111;
             text-transform: uppercase;
         }
 
@@ -119,7 +119,7 @@
 
         .sidebar {
             width: 220px;
-            background: #fff;
+            background: #ffffff;
             padding: 15px;
             border-radius: 8px;
             height: fit-content;
@@ -131,7 +131,7 @@
             font-size: 14px;
             border-bottom: 2px solid #d4af37;
             padding-bottom: 5px;
-            color: #000;
+            color: #000000;
         }
 
         .sidebar ul {
@@ -146,20 +146,20 @@
             cursor: pointer;
         }
 
-        /* Product Cards Mobile Options */
+        /* Product Cards Grid */
         .product-grid {
             flex: 1;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
+            gap: 15px;
         }
 
         .product-card {
-            background: #fff;
+            background: #ffffff;
             border-radius: 8px;
-            padding: 8px;
+            padding: 10px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             border: 1px solid #e0e0e0;
             display: flex;
             flex-direction: column;
@@ -168,23 +168,23 @@
 
         .product-card img {
             width: 100%;
-            height: 220px;
+            height: 260px;
             object-fit: cover;
             border-radius: 6px;
             background-color: #f0f0f0;
         }
 
         .product-card h3 {
-            font-size: 12px;
-            margin-top: 8px;
-            color: #111;
+            font-size: 13px;
+            margin-top: 10px;
+            color: #111111;
             font-weight: 700;
         }
 
         .product-card p {
-            font-size: 10px;
-            color: #777;
-            margin-bottom: 8px;
+            font-size: 11px;
+            color: #777777;
+            margin-bottom: 10px;
         }
 
         /* Like & Order Actions */
@@ -192,16 +192,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 8px;
+            padding-top: 10px;
             border-top: 1px solid #eee;
-            gap: 5px;
+            gap: 6px;
         }
 
         .like-btn {
             background: #e7f0ff;
             border: none;
             color: #1877f2;
-            padding: 6px 10px;
+            padding: 7px 10px;
             border-radius: 15px;
             font-size: 11px;
             cursor: pointer;
@@ -215,8 +215,8 @@
 
         .order-btn {
             background-color: #25d366;
-            color: #fff;
-            padding: 6px 10px;
+            color: #ffffff;
+            padding: 7px 10px;
             border-radius: 4px;
             text-decoration: none;
             font-size: 11px;
@@ -227,8 +227,8 @@
 
         /* WhatsApp Contact Banner */
         .whatsapp-banner {
-            background-color: #000;
-            color: #fff;
+            background-color: #000000;
+            color: #ffffff;
             padding: 15px;
             border-radius: 8px;
             margin-top: 25px;
@@ -240,7 +240,7 @@
 
         .whatsapp-btn {
             background-color: #25d366;
-            color: #fff;
+            color: #ffffff;
             padding: 10px 15px;
             border-radius: 5px;
             font-weight: bold;
@@ -264,7 +264,7 @@
             }
 
             .product-card img {
-                height: 190px;
+                height: 210px;
             }
 
             .whatsapp-banner {
@@ -277,7 +277,7 @@
 </head>
 <body>
 
-    <!-- Logo & Header -->
+    <!-- Header -->
     <header class="header">
         <a href="#" class="logo"><i class="fa-solid fa-gem"></i> SRSafayt</a>
         <a href="https://wa.me/971567439129" style="color: #25d366; font-size: 22px;"><i class="fa-brands fa-whatsapp"></i></a>
@@ -307,16 +307,16 @@
                 <h4>SHOP BY CATEGORY</h4>
                 <ul>
                     <li>All Collections &rsaquo;</li>
-                    <li>Abayas &rsaquo;</li>
-                    <li>Burqas &rsaquo;</li>
-                    <li>New Arrivals &rsaquo;</li>
-                    <li>Best Sellers &rsaquo;</li>
+                    <li>Pearl Work Abayas &rsaquo;</li>
+                    <li>Lace Border Abayas &rsaquo;</li>
+                    <li>Scallop Layered &rsaquo;</li>
+                    <li>Dubai Luxury &rsaquo;</li>
                 </ul>
             </aside>
 
-            <!-- Product Grid Options -->
+            <!-- Product Grid -->
             <section class="product-grid" id="productContainer">
-                <!-- Javascript দিয়ে শুধুমাত্র ইসলামিক বোরকা ও আবায়ার ছবি দেওয়া হবে -->
+                <!-- JavaScript দিয়ে পণ্যসমূহ লোড হবে -->
             </section>
         </div>
 
@@ -330,45 +330,55 @@
         </div>
     </main>
 
-    <!-- JS Code -->
     <script>
-        // শতভাগ নিশ্চিত ইসলামিক আবায়া ও বোরকার ফিল্টারকৃত ছবি
+        // আপনার দেওয়া ৮টি নির্দিষ্ট আবায়ার ডাটা
         const abayaProducts = [
             {
-                name: "BLACK ROYAL ABAYA",
-                category: "New Collection",
-                img: "https://images.pexels.com/photos/9940431/pexels-photo-9940431.jpeg?auto=compress&cs=tinysrgb&w=500"
+                name: "DUST PINK PEARL ABAYA",
+                category: "Pearl Work Collection",
+                // আপনার GitHub ফোল্ডারে ছবিটি থাকলে: "images/abaya1.jpg"
+                img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" 
             },
             {
-                name: "NAVY BLUE ABAYA",
-                category: "New Collection",
-                img: "https://images.pexels.com/photos/11622340/pexels-photo-11622340.jpeg?auto=compress&cs=tinysrgb&w=500"
+                name: "MAUVE LACE EMBROIDERED ABAYA",
+                category: "Lace Trim Collection",
+                img: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=600&q=80"
             },
             {
-                name: "MOCHA BROWN ABAYA",
-                category: "New Collection",
-                img: "https://images.pexels.com/photos/10380428/pexels-photo-10380428.jpeg?auto=compress&cs=tinysrgb&w=500"
+                name: "CHOCOLATE SCALLOP DUAL ABAYA",
+                category: "Layered Scallop Design",
+                img: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=600&q=80"
             },
             {
-                name: "EMERALD GREEN ABAYA",
-                category: "New Collection",
-                img: "https://images.pexels.com/photos/11622339/pexels-photo-11622339.jpeg?auto=compress&cs=tinysrgb&w=500"
+                name: "CLASSIC BLACK FRILL ABAYA",
+                category: "Ruffle Sleeve Design",
+                img: "https://images.unsplash.com/photo-1537832816519-689ad163238b?auto=format&fit=crop&w=600&q=80"
             },
             {
-                name: "BEIGE ELEGANT ABAYA",
-                category: "New Collection",
-                img: "https://images.pexels.com/photos/11622338/pexels-photo-11622338.jpeg?auto=compress&cs=tinysrgb&w=500"
+                name: "DUSTY PURPLE LACE ABAYA",
+                category: "Lace Trim Collection",
+                img: "https://images.unsplash.com/photo-1583391733975-ac826b1f2e1a?auto=format&fit=crop&w=600&q=80"
             },
             {
-                name: "DESIGNER BLACK BURQA",
-                category: "New Collection",
-                img: "https://images.pexels.com/photos/9940432/pexels-photo-9940432.jpeg?auto=compress&cs=tinysrgb&w=500"
+                name: "TAUPE FLORAL EMBROIDERED ABAYA",
+                category: "Turkish Dubai Design",
+                img: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "EMERALD GREEN LACE LUXURY",
+                category: "Luxury Velvet/Chiffon",
+                img: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "BLACK GOLD EMBROIDERED LUXURY",
+                category: "Royal Metallic Embroidery",
+                img: "https://images.unsplash.com/photo-1537832816519-689ad163238b?auto=format&fit=crop&w=600&q=80"
             }
         ];
 
         const container = document.getElementById('productContainer');
 
-        abayaProducts.forEach((product) => {
+        abayaProducts.forEach((product, index) => {
             const cardHtml = `
                 <div class="product-card">
                     <div>
@@ -378,16 +388,16 @@
                     </div>
                     <div class="card-actions">
                         <button class="like-btn" onclick="toggleLike(this)">
-                            <i class="fa-regular fa-thumbs-up"></i> Like <span class="like-count">${Math.floor(Math.random() * 25) + 10}</span>
+                            <i class="fa-regular fa-thumbs-up"></i> Like <span class="like-count">${20 + index * 3}</span>
                         </button>
-                        <a href="https://wa.me/971567439129?text=Hello,%20I%20want%20to%20order%20${encodeURIComponent(product.name)}" class="order-btn" target="_blank">Order</a>
+                        <a href="https://wa.me/971567439129?text=Hello,%20I%20want%20to%20order:%20${encodeURIComponent(product.name)}" class="order-btn" target="_blank">Order</a>
                     </div>
                 </div>
             `;
             container.innerHTML += cardHtml;
         });
 
-        // Facebook Like Functionality
+        // Like Button Function
         function toggleLike(btn) {
             const icon = btn.querySelector('i');
             const countSpan = btn.querySelector('.like-count');
