@@ -1,429 +1,296 @@
-abaya1.jpg⁠ (পার্ল ওয়ার্ক ওয়ালা গোলাপি আবায়া)
- ⁠abaya2.jpg⁠ (লেস দেওয়া পিংক আবায়া)
- ⁠abaya3.jpg⁠ (ব্রাউন স্কেলপ আবায়া)
- ⁠abaya4.jpg⁠ (ব্ল্যাক ফ্রিল আবায়া)
- ⁠abaya5.jpg⁠ (পার্পল লেস আবায়া)
- ⁠abaya6.jpg⁠ (এমব্রয়ডারি করা টাউপ আবায়া)
- ⁠abaya7.jpg⁠ (ডার্ক গ্রিন লেস আবায়া)
- ⁠abaya8.jpg⁠ (ব্ল্যাক গোল্ডেন বিলাসবহুল আবায়া)
-<html lang="en">
+
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRSafayt - Dubai Abaya Collection</title>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Cyber Security Architecture & Roadmap</title>
     <style>
+        :root {
+            --bg-color: #060b11;
+            --card-bg: rgba(13, 25, 38, 0.7);
+            --blue-team: #00d2ff;
+            --red-team: #ff3366;
+            --text-color: #e2e8f0;
+            --border-glow-blue: rgba(0, 210, 255, 0.4);
+            --border-glow-red: rgba(255, 51, 102, 0.4);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #0d0d0d;
-            color: #ffffff;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.15), transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(255, 51, 102, 0.15), transparent 50%);
+            min-height: 100vh;
+            padding: 40px 20px;
         }
 
-        /* Top Header & Logo */
         .header {
-            background-color: #000000;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #d4af37;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #d4af37;
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        /* Hero Banner */
-        .hero-banner {
             text-align: center;
-            padding: 40px 15px;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), #111111;
-            border-bottom: 2px solid #d4af37;
+            margin-bottom: 50px;
         }
 
-        .hero-banner h3 {
-            color: #d4af37;
-            font-size: 12px;
-            letter-spacing: 2px;
-        }
-
-        .hero-banner h1 {
-            font-size: 24px;
-            margin: 10px 0;
-            color: #ffffff;
+        .header h1 {
+            font-size: 2.8rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            background: linear-gradient(90deg, var(--blue-team), #ffffff, var(--red-team));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
         }
 
-        .hero-banner p {
-            color: #cccccc;
-            font-size: 12px;
-            margin-bottom: 20px;
+        .header p {
+            color: #94a3b8;
+            margin-top: 10px;
+            font-size: 1.1rem;
         }
 
-        .btn-container {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 10px 18px;
-            border-radius: 5px;
-            font-size: 12px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .btn-gold {
-            background-color: #d4af37;
-            color: #000000;
-        }
-
-        .btn-outline {
-            border: 1px solid #ffffff;
-            color: #ffffff;
-        }
-
-        /* Main Container */
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 10px;
-            background-color: #f8f9fa;
-            color: #333333;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
         }
 
-        .section-title {
+        @media (max-width: 850px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .team-sector {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blue-sector {
+            border: 1px solid var(--border-glow-blue);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.1);
+        }
+
+        .blue-sector:hover {
+            box-shadow: 0 0 35px rgba(0, 210, 255, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .red-sector {
+            border: 1px solid var(--border-glow-red);
+            box-shadow: 0 0 25px rgba(255, 51, 102, 0.1);
+        }
+
+        .red-sector:hover {
+            box-shadow: 0 0 35px rgba(255, 51, 102, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .sector-title {
             text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .section-title h2 {
-            font-size: 20px;
-            color: #111111;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
             text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
         }
 
-        /* Layout Grid */
-        .main-layout {
-            display: flex;
+        .blue-sector .sector-title {
+            color: var(--blue-team);
+            border-bottom: 2px solid var(--blue-team);
+            padding-bottom: 10px;
+        }
+
+        .red-sector .sector-title {
+            color: var(--red-team);
+            border-bottom: 2px solid var(--red-team);
+            padding-bottom: 10px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
 
-        .sidebar {
-            width: 220px;
-            background: #ffffff;
-            padding: 15px;
-            border-radius: 8px;
-            height: fit-content;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
         }
 
-        .sidebar h4 {
-            margin-bottom: 10px;
-            font-size: 14px;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 5px;
-            color: #000000;
+        .card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            cursor: pointer;
         }
 
-        .sidebar ul {
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blue-sector .card h3 { color: #80e5ff; }
+        .red-sector .card h3 { color: #ff80a0; }
+
+        .card ul {
             list-style: none;
         }
 
-        .sidebar ul li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-            font-size: 13px;
-            color: #555;
-            cursor: pointer;
+        .card ul li {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 18px;
         }
 
-        /* Product Cards Grid */
-        .product-grid {
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+        .card ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
         }
 
-        .product-card {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 10px;
+        .blue-sector .card ul li::before { color: var(--blue-team); }
+        .red-sector .card ul li::before { color: var(--red-team); }
+
+        .footer {
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border: 1px solid #e0e0e0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 260px;
-            object-fit: cover;
-            border-radius: 6px;
-            background-color: #f0f0f0;
-        }
-
-        .product-card h3 {
-            font-size: 13px;
-            margin-top: 10px;
-            color: #111111;
-            font-weight: 700;
-        }
-
-        .product-card p {
-            font-size: 11px;
-            color: #777777;
-            margin-bottom: 10px;
-        }
-
-        /* Like & Order Actions */
-        .card-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 10px;
-            border-top: 1px solid #eee;
-            gap: 6px;
-        }
-
-        .like-btn {
-            background: #e7f0ff;
-            border: none;
-            color: #1877f2;
-            padding: 7px 10px;
-            border-radius: 15px;
-            font-size: 11px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-weight: bold;
-            flex: 1;
-            justify-content: center;
-        }
-
-        .order-btn {
-            background-color: #25d366;
-            color: #ffffff;
-            padding: 7px 10px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 11px;
-            font-weight: bold;
-            flex: 1;
-            text-align: center;
-        }
-
-        /* WhatsApp Contact Banner */
-        .whatsapp-banner {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1px solid #d4af37;
-        }
-
-        .whatsapp-btn {
-            background-color: #25d366;
-            color: #ffffff;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 12px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .main-layout {
-                flex-direction: column;
-            }
-
-            .sidebar {
-                width: 100%;
-            }
-
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .product-card img {
-                height: 210px;
-            }
-
-            .whatsapp-banner {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
+            margin-top: 60px;
+            color: #64748b;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <a href="#" class="logo"><i class="fa-solid fa-gem"></i> SRSafayt</a>
-        <a href="https://wa.me/971567439129" style="color: #25d366; font-size: 22px;"><i class="fa-brands fa-whatsapp"></i></a>
-    </header>
+    <div class="header">
+        <h1>Cyber Security Architecture</h1>
+        <p>Defensive vs Offensive Security Roadmap & Framework</p>
+    </div>
 
-    <!-- Cover Banner -->
-    <section class="hero-banner">
-        <h3>WELCOME TO</h3>
-        <h1>DUBAI ABAYA FASHION</h1>
-        <p>MODESTY IS THE NEW LUXURY<br>PREMIUM ABAYAS & BURQAS</p>
-        <div class="btn-container">
-            <a href="#" class="btn btn-gold">EXPLORE COLLECTION &rarr;</a>
-            <a href="#" class="btn btn-outline">NEW ARRIVALS</a>
-        </div>
-    </section>
-
-    <!-- Main Shop Area -->
-    <main class="container">
-        <div class="section-title">
-            <h2>OUR EXCLUSIVE COLLECTION</h2>
-            <p style="font-size: 12px; color: #666;">Premium Abayas & Burqas</p>
-        </div>
-
-        <div class="main-layout">
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <h4>SHOP BY CATEGORY</h4>
-                <ul>
-                    <li>All Collections &rsaquo;</li>
-                    <li>Pearl Work Abayas &rsaquo;</li>
-                    <li>Lace Border Abayas &rsaquo;</li>
-                    <li>Scallop Layered &rsaquo;</li>
-                    <li>Dubai Luxury &rsaquo;</li>
-                </ul>
-            </aside>
-
-            <!-- Product Grid -->
-            <section class="product-grid" id="productContainer">
-                <!-- JavaScript দিয়ে পণ্যসমূহ লোড হবে -->
-            </section>
-        </div>
-
-        <!-- WhatsApp Banner -->
-        <div class="whatsapp-banner">
-            <div>
-                <p style="font-size: 11px;">HAVE A QUESTION OR WANT TO PLACE AN ORDER?</p>
-                <h3 style="color: #d4af37; font-size: 17px; margin-top: 2px;">+971 56 743 9129</h3>
+    <div class="container">
+        <!-- Blue Team Section -->
+        <div class="team-sector blue-sector">
+            <div class="sector-title">
+                🛡️ Defensive Security (Blue Team)
             </div>
-            <a href="https://wa.me/971567439129" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> CHAT ON WHATSAPP</a>
+            
+            <div class="category-grid">
+                <div class="card">
+                    <h3>🌐 Network Security</h3>
+                    <ul>
+                        <li>Firewalls</li>
+                        <li>VPNs & Encryption</li>
+                        <li>Intrusion Detection (IDS)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🚨 Incident Response</h3>
+                    <ul>
+                        <li>Threat Hunting</li>
+                        <li>Malware Analysis</li>
+                        <li>Forensic Investigation</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>📊 SIEM & Analytics</h3>
+                    <ul>
+                        <li>Splunk</li>
+                        <li>ELK Stack</li>
+                        <li>ArcSight Analysis</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🔐 Identity & Governance</h3>
+                    <ul>
+                        <li>Identity & Management</li>
+                        <li>Cryptography</li>
+                        <li>Security Design Patterns</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </main>
+
+        <!-- Red Team Section -->
+        <div class="team-sector red-sector">
+            <div class="sector-title">
+                🎯 Offensive Security (Red Team)
+            </div>
+
+            <div class="category-grid">
+                <div class="card">
+                    <h3>⚔️ Red Teaming</h3>
+                    <ul>
+                        <li>Penetration Testing</li>
+                        <li>Social Engineering</li>
+                        <li>Exploit Development</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🛠️ Penetration Tools</h3>
+                    <ul>
+                        <li>Kali Linux</li>
+                        <li>Metasploit Framework</li>
+                        <li>Nmap Network Scanner</li>
+                        <li>Burp Suite</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🔍 Vulnerability Mgmt</h3>
+                    <ul>
+                        <li>Nessus Vulnerability Scanner</li>
+                        <li>OpenVAS</li>
+                        <li>Qualys Guard</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>📋 Governance & Risk (GRC)</h3>
+                    <ul>
+                        <li>Risk Management</li>
+                        <li>Compliance (GDPR, ISO)</li>
+                        <li>Policy & Audit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Created for Cyber Security Learning & Portfolio | Hosted on GitHub Pages</p>
+    </div>
 
     <script>
-        // আপনার দেওয়া ৮টি নির্দিষ্ট আবায়ার ডাটা
-        const abayaProducts = [
-            {
-                name: "DUST PINK PEARL ABAYA",
-                category: "Pearl Work Collection",
-                // আপনার GitHub ফোল্ডারে ছবিটি থাকলে: "images/abaya1.jpg"
-                img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" 
-            },
-            {
-                name: "MAUVE LACE EMBROIDERED ABAYA",
-                category: "Lace Trim Collection",
-                img: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                name: "CHOCOLATE SCALLOP DUAL ABAYA",
-                category: "Layered Scallop Design",
-                img: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                name: "CLASSIC BLACK FRILL ABAYA",
-                category: "Ruffle Sleeve Design",
-                img: "https://images.unsplash.com/photo-1537832816519-689ad163238b?auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                name: "DUSTY PURPLE LACE ABAYA",
-                category: "Lace Trim Collection",
-                img: "https://images.unsplash.com/photo-1583391733975-ac826b1f2e1a?auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                name: "TAUPE FLORAL EMBROIDERED ABAYA",
-                category: "Turkish Dubai Design",
-                img: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                name: "EMERALD GREEN LACE LUXURY",
-                category: "Luxury Velvet/Chiffon",
-                img: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                name: "BLACK GOLD EMBROIDERED LUXURY",
-                category: "Royal Metallic Embroidery",
-                img: "https://images.unsplash.com/photo-1537832816519-689ad163238b?auto=format&fit=crop&w=600&q=80"
-            }
-        ];
-
-        const container = document.getElementById('productContainer');
-
-        abayaProducts.forEach((product, index) => {
-            const cardHtml = `
-                <div class="product-card">
-                    <div>
-                        <img src="${product.img}" alt="${product.name}" loading="lazy">
-                        <h3>${product.name}</h3>
-                        <p>${product.category}</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="like-btn" onclick="toggleLike(this)">
-                            <i class="fa-regular fa-thumbs-up"></i> Like <span class="like-count">${20 + index * 3}</span>
-                        </button>
-                        <a href="https://wa.me/971567439129?text=Hello,%20I%20want%20to%20order:%20${encodeURIComponent(product.name)}" class="order-btn" target="_blank">Order</a>
-                    </div>
-                </div>
-            `;
-            container.innerHTML += cardHtml;
+        // Interactive Click Effect on Cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h3').innerText;
+                console.log(`Clicked on: ${title}`);
+            });
         });
-
-        // Like Button Function
-        function toggleLike(btn) {
-            const icon = btn.querySelector('i');
-            const countSpan = btn.querySelector('.like-count');
-            let count = parseInt(countSpan.innerText);
-
-            if (icon.classList.contains('fa-regular')) {
-                icon.classList.remove('fa-regular');
-                icon.classList.add('fa-solid');
-                btn.style.background = '#1877f2';
-                btn.style.color = '#ffffff';
-                countSpan.innerText = count + 1;
-            } else {
-                icon.classList.remove('fa-solid');
-                icon.classList.add('fa-regular');
-                btn.style.background = '#e7f0ff';
-                btn.style.color = '#1877f2';
-                countSpan.innerText = count - 1;
-            }
-        }
     </script>
 </body>
 </html>
