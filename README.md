@@ -1,296 +1,196 @@
 
-<html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Security Architecture & Roadmap</title>
-    <style>
-        :root {
-            --bg-color: #060b11;
-            --card-bg: rgba(13, 25, 38, 0.7);
-            --blue-team: #00d2ff;
-            --red-team: #ff3366;
-            --text-color: #e2e8f0;
-            --border-glow-blue: rgba(0, 210, 255, 0.4);
-            --border-glow-red: rgba(255, 51, 102, 0.4);
-        }
+from PIL import Image
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+from pathlib import Path
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.15), transparent 50%),
-                radial-gradient(circle at 50% 100%, rgba(255, 51, 102, 0.15), transparent 50%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
+import shutil, zipfile, re
 
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+base = Path("/mnt/data/dubai_abaya_fashion")
 
-        .header h1 {
-            font-size: 2.8rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            background: linear-gradient(90deg, var(--blue-team), #ffffff, var(--red-team));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
-        }
+assets = base / "assets"
 
-        .header p {
-            color: #94a3b8;
-            margin-top: 10px;
-            font-size: 1.1rem;
-        }
+assets.mkdir(exist_ok=True)
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
+# The generated catalog image is a 4x2 grid. Crop each product into its own image.
 
-        @media (max-width: 850px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-        }
+sheet = Image.open("/mnt/data/a_clean_catalog_like_composite_image_a_grid_coll.png").convert("RGB")
 
-        .team-sector {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 30px;
-            backdrop-filter: blur(10px);
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+boxes = [
 
-        .blue-sector {
-            border: 1px solid var(--border-glow-blue);
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.1);
-        }
+    (14, 12, 326, 514), (345, 12, 658, 514),
 
-        .blue-sector:hover {
-            box-shadow: 0 0 35px rgba(0, 210, 255, 0.25);
-            transform: translateY(-5px);
-        }
+    (678, 12, 991, 514), (1011, 12, 1323, 514),
 
-        .red-sector {
-            border: 1px solid var(--border-glow-red);
-            box-shadow: 0 0 25px rgba(255, 51, 102, 0.1);
-        }
+    (14, 568, 326, 1069), (345, 568, 658, 1069),
 
-        .red-sector:hover {
-            box-shadow: 0 0 35px rgba(255, 51, 102, 0.25);
-            transform: translateY(-5px);
-        }
+    (678, 568, 991, 1069), (1011, 568, 1323, 1069),
 
-        .sector-title {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
+]
 
-        .blue-sector .sector-title {
-            color: var(--blue-team);
-            border-bottom: 2px solid var(--blue-team);
-            padding-bottom: 10px;
-        }
+names = [
 
-        .red-sector .sector-title {
-            color: var(--red-team);
-            border-bottom: 2px solid var(--red-team);
-            padding-bottom: 10px;
-        }
+    "abaya-green-flower.jpg", "abaya-red-lace.jpg",
 
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+    "abaya-black-stones.jpg", "abaya-olive-embroid.jpg",
 
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
+    "abaya-lavender-fleur.jpg", "abaya-purple-embroid.jpg",
 
-        .card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            cursor: pointer;
-        }
+    "abaya-navy-lace.jpg", "abaya-black-wave.jpg",
 
-        .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+]
 
-        .blue-sector .card h3 { color: #80e5ff; }
-        .red-sector .card h3 { color: #ff80a0; }
+for box, name in zip(boxes, names):
 
-        .card ul {
-            list-style: none;
-        }
+    crop = sheet.crop(box)
 
-        .card ul li {
-            font-size: 0.95rem;
-            color: #cbd5e1;
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 18px;
-        }
+    # Keep the image clean and consistent for the website.
 
-        .card ul li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-        }
+    crop.thumbnail((900, 1200), Image.Resampling.LANCZOS)
 
-        .blue-sector .card ul li::before { color: var(--blue-team); }
-        .red-sector .card ul li::before { color: var(--red-team); }
+    crop.save(assets / name, quality=94, optimize=True)
 
-        .footer {
-            text-align: center;
-            margin-top: 60px;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-    </style>
-</head>
-<body>
+html_path = base / "index.html"
 
-    <div class="header">
-        <h1>Cyber Security Architecture</h1>
-        <p>Defensive vs Offensive Security Roadmap & Framework</p>
-    </div>
+html = html_path.read_text(encoding="utf-8")
 
-    <div class="container">
-        <!-- Blue Team Section -->
-        <div class="team-sector blue-sector">
-            <div class="sector-title">
-                🛡️ Defensive Security (Blue Team)
-            </div>
-            
-            <div class="category-grid">
-                <div class="card">
-                    <h3>🌐 Network Security</h3>
-                    <ul>
-                        <li>Firewalls</li>
-                        <li>VPNs & Encryption</li>
-                        <li>Intrusion Detection (IDS)</li>
-                    </ul>
-                </div>
+# Fix the existing product object separator if needed.
 
-                <div class="card">
-                    <h3>🚨 Incident Response</h3>
-                    <ul>
-                        <li>Threat Hunting</li>
-                        <li>Malware Analysis</li>
-                        <li>Forensic Investigation</li>
-                    </ul>
-                </div>
+html = html.replace(
 
-                <div class="card">
-                    <h3>📊 SIEM & Analytics</h3>
-                    <ul>
-                        <li>Splunk</li>
-                        <li>ELK Stack</li>
-                        <li>ArcSight Analysis</li>
-                    </ul>
-                </div>
+    'desc:"A statement black design with premium-looking embroidery and a graceful silhouette."}\n\n7:',
 
-                <div class="card">
-                    <h3>🔐 Identity & Governance</h3>
-                    <ul>
-                        <li>Identity & Management</li>
-                        <li>Cryptography</li>
-                        <li>Security Design Patterns</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    'desc:"A statement black design with premium-looking embroidery and a graceful silhouette."},\n7:'
 
-        <!-- Red Team Section -->
-        <div class="team-sector red-sector">
-            <div class="sector-title">
-                🎯 Offensive Security (Red Team)
-            </div>
+)
 
-            <div class="category-grid">
-                <div class="card">
-                    <h3>⚔️ Red Teaming</h3>
-                    <ul>
-                        <li>Penetration Testing</li>
-                        <li>Social Engineering</li>
-                        <li>Exploit Development</li>
-                    </ul>
-                </div>
+# Add products 15-22 immediately before the existing closing "};".
 
-                <div class="card">
-                    <h3>🛠️ Penetration Tools</h3>
-                    <ul>
-                        <li>Kali Linux</li>
-                        <li>Metasploit Framework</li>
-                        <li>Nmap Network Scanner</li>
-                        <li>Burp Suite</li>
-                    </ul>
-                </div>
+products_end = html.find("};", html.find("const products="))
 
-                <div class="card">
-                    <h3>🔍 Vulnerability Mgmt</h3>
-                    <ul>
-                        <li>Nessus Vulnerability Scanner</li>
-                        <li>OpenVAS</li>
-                        <li>Qualys Guard</li>
-                    </ul>
-                </div>
+new_products = r'''
 
-                <div class="card">
-                    <h3>📋 Governance & Risk (GRC)</h3>
-                    <ul>
-                        <li>Risk Management</li>
-                        <li>Compliance (GDPR, ISO)</li>
-                        <li>Policy & Audit</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+15:{title:"Pastel Green Flower Abaya",code:"DAF-015",img:"assets/abaya-green-flower.jpg",color:"Pastel Green",design:"Long floral front embroidery",fabric:"Flowing premium fabric",embroidery:"Pink & mint floral embroidery",category:"Abaya",availability:"Available",delivery:"UAE delivery available",sizes:["S","M","L","XL","XXL"],desc:"A soft pastel-green abaya with a beautiful floral embroidered front and matching cuff details."},
 
-    <div class="footer">
-        <p>Created for Cyber Security Learning & Portfolio | Hosted on GitHub Pages</p>
-    </div>
+16:{title:"Ruby Red Lace Abaya",code:"DAF-016",img:"assets/abaya-red-lace.jpg",color:"Ruby Red",design:"Full front lace trim",fabric:"Smooth flowing fabric",embroidery:"Tone-on-tone floral lace",category:"Abaya",availability:"Available",delivery:"UAE delivery available",sizes:["S","M","L","XL","XXL"],desc:"A rich red abaya with elegant lace running along the front and sleeves."},
 
-    <script>
-        // Interactive Click Effect on Cards
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', () => {
-                const title = card.querySelector('h3').innerText;
-                console.log(`Clicked on: ${title}`);
-            });
-        });
-    </script>
-</body>
-</html>
+17:{title:"Black Crystal Abaya",code:"DAF-017",img:"assets/abaya-black-stones.jpg",color:"Black",design:"Crystal leaf embellishment",fabric:"Smooth flowing fabric",embroidery:"Sparkling crystal leaf details",category:"Abaya",availability:"Available",delivery:"UAE delivery available",sizes:["S","M","L","XL","XXL"],desc:"A dramatic black design with subtle sparkling embellishment across the upper body and sleeves."},
+
+18:{title:"Olive Green Embroidered Abaya",code:"DAF-018",img:"assets/abaya-olive-embroid.jpg",color:"Olive Green",design:"Wide-sleeve embroidered style",fabric:"Flowing premium fabric",embroidery:"Fine floral embroidery",category:"Abaya",availability:"Available",delivery:"UAE delivery available",sizes:["S","M","L","XL","XXL"],desc:"An elegant olive-green abaya with a flowing silhouette and detailed embroidery."},
+
+19:{title:"Lavender Fleur Abaya",code:"DAF-019",img:"assets/abaya-lavender-fleur.jpg",color:"Lavender Pink",design:"Fleur motif front design",fabric:"Lightweight flowing fabric",embroidery:"Delicate floral motifs",category:"Abaya",availability:"Available",delivery:"UAE delivery available",sizes:["S","M","L","XL","XXL"],desc:"A graceful lavender abaya with soft decorative motifs and a wide modest silhouette."},
+
+20:{title:"Royal Purple Embroidered Abaya",code:"DAF-020",img:"assets/abaya-purple-embroid.jpg",color:"Royal Purple",design:"All-over luxury embroidery",fabric:"Premium flowing fabric",embroidery:"Rich floral embroidery",category:"Abaya",availability:"Available",delivery:"UAE delivery available",sizes:["S","M","L","XL","XXL"],desc:"A luxurious purple abaya with rich embroidery and an elegant occasion-ready finish."},
+
+21:{title:"Navy Blue Lace Abaya",code:"DAF-021",img:"assets/abaya-navy-lace.jpg",color:"Navy Blue",design:"Long lace-panel design",fabric:"Smooth flowing fabric",embroidery:"Decorative lace edging",category:"Abaya",availability:"Available",delivery:"UAE delivery available",sizes:["S","M","L","XL","XXL"],desc:"A classic navy design with long decorative panels and refined lace-style edging."},
+
+22:{title:"Black Wave Abaya",code:"DAF-022",img:"assets/abaya-black-wave.jpg",color:"Black",design:"Flowing wave-sleeve silhouette",fabric:"Smooth flowing fabric",embroidery:"Fine front and sleeve detailing",category:"Abaya",availability:"Available",delivery:"UAE delivery available",sizes:["S","M","L","XL","XXL"],desc:"A sophisticated black abaya with a dramatic flowing silhouette and refined detailing."},
+
+'''
+
+html = html[:products_end] + new_products + html[products_end:]
+
+# Add the eight new cards before the existing empty-state marker.
+
+card_anchor = '      <div class="empty" id="empty">No matching designs found.</div>'
+
+new_cards = r'''
+
+      <article class="card" data-name="Pastel Green Flower Abaya" data-type="abaya new" data-id="15">
+
+        <div class="photo"><img src="assets/abaya-green-flower.jpg" alt="Pastel Green Flower Abaya"><button class="like" onclick="likeProduct(event,15)">♡</button><span class="tag">NEW ARRIVAL</span></div>
+
+        <div class="card-info"><h3>Pastel Green Flower Abaya</h3><div class="meta">Pastel Green • Floral • Abaya</div><div class="card-bottom"><button class="details" onclick="openDetails(15)">VIEW DETAILS</button><button class="ask" onclick="ask(15)">ASK PRICE</button></div></div>
+
+      </article>
+
+      <article class="card" data-name="Ruby Red Lace Abaya" data-type="abaya new best" data-id="16">
+
+        <div class="photo"><img src="assets/abaya-red-lace.jpg" alt="Ruby Red Lace Abaya"><button class="like" onclick="likeProduct(event,16)">♡</button><span class="tag">BEST SELLER</span></div>
+
+        <div class="card-info"><h3>Ruby Red Lace Abaya</h3><div class="meta">Ruby Red • Lace • Abaya</div><div class="card-bottom"><button class="details" onclick="openDetails(16)">VIEW DETAILS</button><button class="ask" onclick="ask(16)">ASK PRICE</button></div></div>
+
+      </article>
+
+      <article class="card" data-name="Black Crystal Abaya" data-type="abaya best" data-id="17">
+
+        <div class="photo"><img src="assets/abaya-black-stones.jpg" alt="Black Crystal Abaya"><button class="like" onclick="likeProduct(event,17)">♡</button><span class="tag">BEST SELLER</span></div>
+
+        <div class="card-info"><h3>Black Crystal Abaya</h3><div class="meta">Black • Crystal • Abaya</div><div class="card-bottom"><button class="details" onclick="openDetails(17)">VIEW DETAILS</button><button class="ask" onclick="ask(17)">ASK PRICE</button></div></div>
+
+      </article>
+
+      <article class="card" data-name="Olive Green Embroidered Abaya" data-type="abaya new" data-id="18">
+
+        <div class="photo"><img src="assets/abaya-olive-embroid.jpg" alt="Olive Green Embroidered Abaya"><button class="like" onclick="likeProduct(event,18)">♡</button><span class="tag">NEW ARRIVAL</span></div>
+
+        <div class="card-info"><h3>Olive Green Embroidered Abaya</h3><div class="meta">Olive Green • Embroidery • Abaya</div><div class="card-bottom"><button class="details" onclick="openDetails(18)">VIEW DETAILS</button><button class="ask" onclick="ask(18)">ASK PRICE</button></div></div>
+
+      </article>
+
+      <article class="card" data-name="Lavender Fleur Abaya" data-type="abaya new" data-id="19">
+
+        <div class="photo"><img src="assets/abaya-lavender-fleur.jpg" alt="Lavender Fleur Abaya"><button class="like" onclick="likeProduct(event,19)">♡</button><span class="tag">NEW ARRIVAL</span></div>
+
+        <div class="card-info"><h3>Lavender Fleur Abaya</h3><div class="meta">Lavender • Fleur • Abaya</div><div class="card-bottom"><button class="details" onclick="openDetails(19)">VIEW DETAILS</button><button class="ask" onclick="ask(19)">ASK PRICE</button></div></div>
+
+      </article>
+
+      <article class="card" data-name="Royal Purple Embroidered Abaya" data-type="abaya best" data-id="20">
+
+        <div class="photo"><img src="assets/abaya-purple-embroid.jpg" alt="Royal Purple Embroidered Abaya"><button class="like" onclick="likeProduct(event,20)">♡</button><span class="tag">BEST SELLER</span></div>
+
+        <div class="card-info"><h3>Royal Purple Embroidered Abaya</h3><div class="meta">Royal Purple • Embroidery • Abaya</div><div class="card-bottom"><button class="details" onclick="openDetails(20)">VIEW DETAILS</button><button class="ask" onclick="ask(20)">ASK PRICE</button></div></div>
+
+      </article>
+
+      <article class="card" data-name="Navy Blue Lace Abaya" data-type="abaya new" data-id="21">
+
+        <div class="photo"><img src="assets/abaya-navy-lace.jpg" alt="Navy Blue Lace Abaya"><button class="like" onclick="likeProduct(event,21)">♡</button><span class="tag">NEW ARRIVAL</span></div>
+
+        <div class="card-info"><h3>Navy Blue Lace Abaya</h3><div class="meta">Navy Blue • Lace • Abaya</div><div class="card-bottom"><button class="details" onclick="openDetails(21)">VIEW DETAILS</button><button class="ask" onclick="ask(21)">ASK PRICE</button></div></div>
+
+      </article>
+
+      <article class="card" data-name="Black Wave Abaya" data-type="abaya best" data-id="22">
+
+        <div class="photo"><img src="assets/abaya-black-wave.jpg" alt="Black Wave Abaya"><button class="like" onclick="likeProduct(event,22)">♡</button><span class="tag">BEST SELLER</span></div>
+
+        <div class="card-info"><h3>Black Wave Abaya</h3><div class="meta">Black • Wave Sleeve • Abaya</div><div class="card-bottom"><button class="details" onclick="openDetails(22)">VIEW DETAILS</button><button class="ask" onclick="ask(22)">ASK PRICE</button></div></div>
+
+      </article>
+
+'''
+
+if card_anchor in html:
+
+    html = html.replace(card_anchor, new_cards + card_anchor, 1)
+
+html_path.write_text(html, encoding="utf-8")
+
+# Create a ZIP with the complete website.
+
+zip_path = Path("/mnt/data/Dubai_Abaya_Fashion_22_Products_Updated.zip")
+
+with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+
+    for path in base.rglob("*"):
+
+        if path.is_file():
+
+            z.write(path, path.relative_to(base.parent))
+
+# Also provide the eight individual images in a separate ZIP.
+
+images_zip = Path("/mnt/data/Dubai_Abaya_Fashion_8_Individual_Product_Images.zip")
+
+with zipfile.ZipFile(images_zip, "w", zipfile.ZIP_DEFLATED) as z:
+
+    for name in names:
+
+        z.write(assets / name, name)
+
+print("Done.")
+
+print(f"Website ZIP: {zip_path}")
+
+print(f"Individual images ZIP: {images_zip}")
