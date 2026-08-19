@@ -1,9 +1,9 @@
 
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>দুবাই আবায়া ফ্যাশন - Dubai Abaya Fashion</title>
+  <title>Dubai Abaya Fashion</title>
   <style>
     :root {
       --primary: #0a0a0a;
@@ -282,7 +282,7 @@
 
   <div class="hero-title">
     <h1>Dubai Abaya Fashion Collection</h1>
-    <p>আপনার পছন্দের আবায়ার মূল্য ও বিস্তারিত জানতে সরাসরি WhatsApp-এ যোগাযোগ করুন</p>
+    <p>Contact us directly via WhatsApp for pricing and product details</p>
   </div>
 
   <div class="container">
@@ -291,14 +291,14 @@
       <!-- Item 1 -->
       <div class="product-card">
         <div class="product-image-container">
-          <img src="assets/image1.png" alt="প্রিমিয়াম ব্ল্যাক আবায়া" class="product-image" onerror="imageFallback(this)">
+          <img src="assets/image1.png" alt="Premium Black Abaya" class="product-image" onerror="imageFallback(this)">
           <button class="like-btn" onclick="toggleLike(this)">♥</button>
         </div>
         <div class="product-info">
-          <div class="product-title">প্রিমিয়াম ব্ল্যাক আবায়া</div>
-          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="product-title">Premium Black Abaya</div>
+          <div class="price-hidden-tag">Contact via WhatsApp to know price</div>
           <div class="size-option">
-            <label>সাইজ সিলেক্ট করুন:</label>
+            <label>Select Size:</label>
             <select id="size-1" class="size-select">
               <option value="52">52</option>
               <option value="54">54</option>
@@ -306,11 +306,11 @@
             </select>
           </div>
           <div class="btn-group">
-            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম ব্ল্যাক আবায়া (Design 1)', 'size-1')" class="btn-whatsapp">
-              WhatsApp অর্ডার করুন
+            <a href="#" onclick="orderWhatsApp('Premium Black Abaya', 'size-1')" class="btn-whatsapp">
+              WhatsApp Order
             </a>
-            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম ব্ল্যাক আবায়া (Price Query)', 'size-1')" class="btn-contact">
-              📞 কন্টাক্ট (Price)
+            <a href="#" onclick="orderWhatsApp('Premium Black Abaya (Price Query)', 'size-1')" class="btn-contact">
+              📞 Contact (Price)
             </a>
           </div>
         </div>
@@ -319,14 +319,14 @@
       <!-- Item 2 -->
       <div class="product-card">
         <div class="product-image-container">
-          <img src="assets/image2.png" alt="প্রিমিয়াম সি-গ্রিন আবায়া" class="product-image" onerror="imageFallback(this)">
+          <img src="assets/image2.png" alt="Premium Sea-Green Abaya" class="product-image" onerror="imageFallback(this)">
           <button class="like-btn" onclick="toggleLike(this)">♥</button>
         </div>
         <div class="product-info">
-          <div class="product-title">প্রিমিয়াম সি-গ্রিন আবায়া</div>
-          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="product-title">Premium Sea-Green Abaya</div>
+          <div class="price-hidden-tag">Contact via WhatsApp to know price</div>
           <div class="size-option">
-            <label>সাইজ সিলেক্ট করুন:</label>
+            <label>Select Size:</label>
             <select id="size-2" class="size-select">
               <option value="52">52</option>
               <option value="54">54</option>
@@ -334,11 +334,11 @@
             </select>
           </div>
           <div class="btn-group">
-            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম সি-গ্রিন আবায়া', 'size-2')" class="btn-whatsapp">
-              WhatsApp অর্ডার করুন
+            <a href="#" onclick="orderWhatsApp('Premium Sea-Green Abaya', 'size-2')" class="btn-whatsapp">
+              WhatsApp Order
             </a>
-            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম সি-গ্রিন আবায়া (Price Query)', 'size-2')" class="btn-contact">
-              📞 কন্টাক্ট (Price)
+            <a href="#" onclick="orderWhatsApp('Premium Sea-Green Abaya (Price Query)', 'size-2')" class="btn-contact">
+              📞 Contact (Price)
             </a>
           </div>
         </div>
@@ -347,14 +347,14 @@
       <!-- Item 3 -->
       <div class="product-card">
         <div class="product-image-container">
-          <img src="assets/image3.png" alt="প্রিমিয়াম ব্রাউন আবায়া" class="product-image" onerror="imageFallback(this)">
+          <img src="assets/image3.png" alt="Premium Brown Abaya" class="product-image" onerror="imageFallback(this)">
           <button class="like-btn" onclick="toggleLike(this)">♥</button>
         </div>
         <div class="product-info">
-          <div class="product-title">প্রিমিয়াম ব্রাউন আবায়া</div>
-          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="product-title">Premium Brown Abaya</div>
+          <div class="price-hidden-tag">Contact via WhatsApp to know price</div>
           <div class="size-option">
-            <label>সাইজ সিলেক্ট করুন:</label>
+            <label>Select Size:</label>
             <select id="size-3" class="size-select">
               <option value="52">52</option>
               <option value="54">54</option>
@@ -362,11 +362,11 @@
             </select>
           </div>
           <div class="btn-group">
-            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম ব্রাউন আবায়া', 'size-3')" class="btn-whatsapp">
-              WhatsApp অর্ডার করুন
+            <a href="#" onclick="orderWhatsApp('Premium Brown Abaya', 'size-3')" class="btn-whatsapp">
+              WhatsApp Order
             </a>
-            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম ব্রাউন আবায়া (Price Query)', 'size-3')" class="btn-contact">
-              📞 কন্টাক্ট (Price)
+            <a href="#" onclick="orderWhatsApp('Premium Brown Abaya (Price Query)', 'size-3')" class="btn-contact">
+              📞 Contact (Price)
             </a>
           </div>
         </div>
@@ -375,14 +375,14 @@
       <!-- Item 4 -->
       <div class="product-card">
         <div class="product-image-container">
-          <img src="assets/image4.png" alt="প্রিমিয়াম মোভ আবায়া" class="product-image" onerror="imageFallback(this)">
+          <img src="assets/image4.png" alt="Premium Mauve Abaya" class="product-image" onerror="imageFallback(this)">
           <button class="like-btn" onclick="toggleLike(this)">♥</button>
         </div>
         <div class="product-info">
-          <div class="product-title">প্রিমিয়াম মোভ আবায়া</div>
-          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="product-title">Premium Mauve Abaya</div>
+          <div class="price-hidden-tag">Contact via WhatsApp to know price</div>
           <div class="size-option">
-            <label>সাইজ সিলেক্ট করুন:</label>
+            <label>Select Size:</label>
             <select id="size-4" class="size-select">
               <option value="52">52</option>
               <option value="54">54</option>
@@ -390,11 +390,11 @@
             </select>
           </div>
           <div class="btn-group">
-            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম মোভ আবায়া', 'size-4')" class="btn-whatsapp">
-              WhatsApp অর্ডার করুন
+            <a href="#" onclick="orderWhatsApp('Premium Mauve Abaya', 'size-4')" class="btn-whatsapp">
+              WhatsApp Order
             </a>
-            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম মোভ আবায়া (Price Query)', 'size-4')" class="btn-contact">
-              📞 কন্টাক্ট (Price)
+            <a href="#" onclick="orderWhatsApp('Premium Mauve Abaya (Price Query)', 'size-4')" class="btn-contact">
+              📞 Contact (Price)
             </a>
           </div>
         </div>
@@ -403,14 +403,14 @@
       <!-- Item 5 -->
       <div class="product-card">
         <div class="product-image-container">
-          <img src="assets/image5.png" alt="ডিপ গ্রিন লেস আবায়া" class="product-image" onerror="imageFallback(this)">
+          <img src="assets/image5.png" alt="Deep Green Lace Abaya" class="product-image" onerror="imageFallback(this)">
           <button class="like-btn" onclick="toggleLike(this)">♥</button>
         </div>
         <div class="product-info">
-          <div class="product-title">ডিপ গ্রিন লেস আবায়া</div>
-          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="product-title">Deep Green Lace Abaya</div>
+          <div class="price-hidden-tag">Contact via WhatsApp to know price</div>
           <div class="size-option">
-            <label>সাইজ সিলেক্ট করুন:</label>
+            <label>Select Size:</label>
             <select id="size-5" class="size-select">
               <option value="52">52</option>
               <option value="54">54</option>
@@ -418,11 +418,11 @@
             </select>
           </div>
           <div class="btn-group">
-            <a href="#" onclick="orderWhatsApp('ডিপ গ্রিন লেস আবায়া', 'size-5')" class="btn-whatsapp">
-              WhatsApp অর্ডার করুন
+            <a href="#" onclick="orderWhatsApp('Deep Green Lace Abaya', 'size-5')" class="btn-whatsapp">
+              WhatsApp Order
             </a>
-            <a href="#" onclick="orderWhatsApp('ডিপ গ্রিন লেস আবায়া (Price Query)', 'size-5')" class="btn-contact">
-              📞 কন্টাক্ট (Price)
+            <a href="#" onclick="orderWhatsApp('Deep Green Lace Abaya (Price Query)', 'size-5')" class="btn-contact">
+              📞 Contact (Price)
             </a>
           </div>
         </div>
@@ -431,14 +431,14 @@
       <!-- Item 6 -->
       <div class="product-card">
         <div class="product-image-container">
-          <img src="assets/image6.png" alt="লাইলাক পারপল আবায়া" class="product-image" onerror="imageFallback(this)">
+          <img src="assets/image6.png" alt="Lilac Purple Abaya" class="product-image" onerror="imageFallback(this)">
           <button class="like-btn" onclick="toggleLike(this)">♥</button>
         </div>
         <div class="product-info">
-          <div class="product-title">লাইলাক পারপল আবায়া</div>
-          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="product-title">Lilac Purple Abaya</div>
+          <div class="price-hidden-tag">Contact via WhatsApp to know price</div>
           <div class="size-option">
-            <label>সাইজ সিলেক্ট করুন:</label>
+            <label>Select Size:</label>
             <select id="size-6" class="size-select">
               <option value="52">52</option>
               <option value="54">54</option>
@@ -446,11 +446,11 @@
             </select>
           </div>
           <div class="btn-group">
-            <a href="#" onclick="orderWhatsApp('লাইলাক পারপল আবায়া', 'size-6')" class="btn-whatsapp">
-              WhatsApp অর্ডার করুন
+            <a href="#" onclick="orderWhatsApp('Lilac Purple Abaya', 'size-6')" class="btn-whatsapp">
+              WhatsApp Order
             </a>
-            <a href="#" onclick="orderWhatsApp('লাইলাক পারপল আবায়া (Price Query)', 'size-6')" class="btn-contact">
-              📞 কন্টাক্ট (Price)
+            <a href="#" onclick="orderWhatsApp('Lilac Purple Abaya (Price Query)', 'size-6')" class="btn-contact">
+              📞 Contact (Price)
             </a>
           </div>
         </div>
@@ -459,14 +459,14 @@
       <!-- Item 7 -->
       <div class="product-card">
         <div class="product-image-container">
-          <img src="assets/image7.png" alt="মোকা ব্রাউন এম্ব্রয়ডারি" class="product-image" onerror="imageFallback(this)">
+          <img src="assets/image7.png" alt="Mocha Brown Embroidery" class="product-image" onerror="imageFallback(this)">
           <button class="like-btn" onclick="toggleLike(this)">♥</button>
         </div>
         <div class="product-info">
-          <div class="product-title">মোকা ব্রাউন এম্ব্রয়ডারি</div>
-          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="product-title">Mocha Brown Embroidery</div>
+          <div class="price-hidden-tag">Contact via WhatsApp to know price</div>
           <div class="size-option">
-            <label>সাইজ সিলেক্ট করুন:</label>
+            <label>Select Size:</label>
             <select id="size-7" class="size-select">
               <option value="52">52</option>
               <option value="54">54</option>
@@ -474,11 +474,11 @@
             </select>
           </div>
           <div class="btn-group">
-            <a href="#" onclick="orderWhatsApp('মোকা ব্রাউন এম্ব্রয়ডারি', 'size-7')" class="btn-whatsapp">
-              WhatsApp অর্ডার করুন
+            <a href="#" onclick="orderWhatsApp('Mocha Brown Embroidery', 'size-7')" class="btn-whatsapp">
+              WhatsApp Order
             </a>
-            <a href="#" onclick="orderWhatsApp('মোকা ব্রাউন এম্ব্রয়ডারি (Price Query)', 'size-7')" class="btn-contact">
-              📞 কন্টাক্ট (Price)
+            <a href="#" onclick="orderWhatsApp('Mocha Brown Embroidery (Price Query)', 'size-7')" class="btn-contact">
+              📞 Contact (Price)
             </a>
           </div>
         </div>
@@ -487,14 +487,14 @@
       <!-- Item 8 -->
       <div class="product-card">
         <div class="product-image-container">
-          <img src="assets/image8.png" alt="ডিজাইনার লুক আবায়া" class="product-image" onerror="imageFallback(this)">
+          <img src="assets/image8.png" alt="Designer Look Abaya" class="product-image" onerror="imageFallback(this)">
           <button class="like-btn" onclick="toggleLike(this)">♥</button>
         </div>
         <div class="product-info">
-          <div class="product-title">ডিজাইনার লুক আবায়া</div>
-          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="product-title">Designer Look Abaya</div>
+          <div class="price-hidden-tag">Contact via WhatsApp to know price</div>
           <div class="size-option">
-            <label>সাইজ সিলেক্ট করুন:</label>
+            <label>Select Size:</label>
             <select id="size-8" class="size-select">
               <option value="52">52</option>
               <option value="54">54</option>
@@ -502,11 +502,11 @@
             </select>
           </div>
           <div class="btn-group">
-            <a href="#" onclick="orderWhatsApp('ডিজাইনার লুক আবায়া', 'size-8')" class="btn-whatsapp">
-              WhatsApp অর্ডার করুন
+            <a href="#" onclick="orderWhatsApp('Designer Look Abaya', 'size-8')" class="btn-whatsapp">
+              WhatsApp Order
             </a>
-            <a href="#" onclick="orderWhatsApp('ডিজাইনার লুক আবায়া (Price Query)', 'size-8')" class="btn-contact">
-              📞 কন্টাক্ট (Price)
+            <a href="#" onclick="orderWhatsApp('Designer Look Abaya (Price Query)', 'size-8')" class="btn-contact">
+              📞 Contact (Price)
             </a>
           </div>
         </div>
@@ -515,14 +515,14 @@
       <!-- Item 9 -->
       <div class="product-card">
         <div class="product-image-container">
-          <img src="assets/image9.png" alt="রয়্যাল রেড আবায়া" class="product-image" onerror="imageFallback(this)">
+          <img src="assets/image9.png" alt="Royal Red Abaya" class="product-image" onerror="imageFallback(this)">
           <button class="like-btn" onclick="toggleLike(this)">♥</button>
         </div>
         <div class="product-info">
-          <div class="product-title">রয়্যাল রেড আবায়া</div>
-          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="product-title">Royal Red Abaya</div>
+          <div class="price-hidden-tag">Contact via WhatsApp to know price</div>
           <div class="size-option">
-            <label>সাইজ সিলেক্ট করুন:</label>
+            <label>Select Size:</label>
             <select id="size-9" class="size-select">
               <option value="52">52</option>
               <option value="54">54</option>
@@ -530,11 +530,11 @@
             </select>
           </div>
           <div class="btn-group">
-            <a href="#" onclick="orderWhatsApp('রয়্যাল রেড আবায়া', 'size-9')" class="btn-whatsapp">
-              WhatsApp অর্ডার করুন
+            <a href="#" onclick="orderWhatsApp('Royal Red Abaya', 'size-9')" class="btn-whatsapp">
+              WhatsApp Order
             </a>
-            <a href="#" onclick="orderWhatsApp('রয়্যাল রেড আবায়া (Price Query)', 'size-9')" class="btn-contact">
-              📞 কন্টাক্ট (Price)
+            <a href="#" onclick="orderWhatsApp('Royal Red Abaya (Price Query)', 'size-9')" class="btn-contact">
+              📞 Contact (Price)
             </a>
           </div>
         </div>
@@ -544,32 +544,29 @@
   </div>
 
   <div class="bottom-banner">
-    <h3>প্রশ্ন আছে বা অর্ডার করতে চান?</h3>
+    <h3>Have questions or want to place an order?</h3>
     <a href="https://wa.me/971567439129" target="_blank" class="banner-wa-btn">
       💬 +971 567 43 9129
     </a>
   </div>
 
   <script>
-    // Like button functionality
     function toggleLike(btn) {
       btn.classList.toggle('active');
     }
 
-    // Image Fallback System
     function imageFallback(img) {
       if (img.dataset.fallbackApplied) return;
       img.dataset.fallbackApplied = "1";
       img.src = "assets/image1.png";
     }
 
-    // WhatsApp Message Function
     function orderWhatsApp(productName, sizeSelectId) {
       var size = document.getElementById(sizeSelectId).value;
       var phoneNumber = "971567439129";
-      var message = "হ্যালো, আমি এই আবায়াটি সম্পর্কে জানতে / অর্ডার করতে চাই:\n\n" +
-                    "প্রোডাক্ট: " + productName + "\n" +
-                    "সাইজ: " + size;
+      var message = "Hello, I would like to inquire/order this item:\n\n" +
+                    "Product: " + productName + "\n" +
+                    "Size: " + size;
       
       var whatsappUrl = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
       window.open(whatsappUrl, '_blank');
