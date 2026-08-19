@@ -1,117 +1,580 @@
-from pathlib import Path
 
-import zipfile, re, shutil, html as htmlmod
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>দুবাই আবায়া ফ্যাশন - Dubai Abaya Fashion</title>
+  <style>
+    :root {
+      --primary: #0a0a0a;
+      --accent: #d4af37;
+      --bg: #f9f8f6;
+      --card-bg: #ffffff;
+      --text: #222222;
+      --text-muted: #666666;
+      --border: #e8e8e8;
+    }
 
-zip_in = Path("/mnt/data/Dubai_Abaya_Fashion_22_Products_Updated.zip")
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-work = Path("/mnt/data/dubai_abaya_fashion_fixed")
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+    }
 
-if work.exists():
+    /* Top Bar */
+    .top-bar {
+      background: var(--primary);
+      color: #ccc;
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
 
-    shutil.rmtree(work)
+    /* Header & Navigation */
+    header {
+      background-color: #111111;
+      color: #ffffff;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-work.mkdir()
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
 
-with zipfile.ZipFile(zip_in, "r") as z:
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+    }
 
-    z.extractall(work)
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
 
-# Find HTML
+    /* Hero Title */
+    .hero-title {
+      text-align: center;
+      padding: 2.5rem 1rem 1rem;
+    }
 
-html_path = work / "dubai_abaya_fashion" / "index.html"
+    .hero-title h1 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
 
-if not html_path.exists():
+    .hero-title p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
 
-    candidates = list(work.rglob("index.html"))
+    /* Container & Grid */
+    .container {
+      max-width: 1200px;
+      margin: 1.5rem auto 3rem;
+      padding: 0 1rem;
+    }
 
-    html_path = candidates[0]
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
 
-text = html_path.read_text(encoding="utf-8", errors="ignore")
+    /* Product Card */
+    .product-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
 
-assets = html_path.parent / "assets"
+    .product-image-container {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      background-color: #f2f2f2;
+      overflow: hidden;
+    }
 
-assets.mkdir(exist_ok=True)
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-# Repair product image paths: normalize all asset references to assets/<filename>.
+    .like-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.85);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #888;
+      transition: all 0.2s;
+    }
 
-text = re.sub(r'(?:(?:\./)?assets/)+', 'assets/', text)
+    .like-btn.active {
+      color: #e74c3c;
+      background: #ffffff;
+    }
 
-text = text.replace('assets//', 'assets/')
+    .product-info {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      text-align: center;
+    }
 
-# Fix accidental malformed JS/image references and ensure the new product cards are present.
+    .product-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
 
-# If an image referenced by HTML is missing, create a safe fallback from the available catalog image.
+    .price-hidden-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
 
-refs = set(re.findall(r'assets/([A-Za-z0-9._-]+\.(?:jpg|jpeg|png|webp))', text, flags=re.I))
+    .size-option {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
 
-available = list(assets.glob("*"))
+    .size-option label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
 
-image_files = [p for p in available if p.suffix.lower() in {".jpg",".jpeg",".png",".webp"}]
+    .size-select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      outline: none;
+      background-color: #fff;
+    }
 
-# Copy/normalize any files with odd names; create missing referenced files from the first valid image
+    /* Buttons */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
 
-# so the browser never displays a broken-image icon.
+    .btn-whatsapp {
+      background-color: #000000;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.75rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
 
-fallback = image_files[0] if image_files else None
+    .btn-contact {
+      background-color: #f2f2f2;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.6rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
 
-for ref in refs:
+    /* Sticky Bottom Banner */
+    .bottom-banner {
+      background: #0d0d0d;
+      color: #fff;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+      border-top: 2px solid var(--accent);
+    }
 
-    target = assets / ref
+    .bottom-banner h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
 
-    if not target.exists() and fallback:
+    .banner-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #d4af37;
+      color: #000;
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
 
-        shutil.copy2(fallback, target)
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero-title h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
 
-# Add robust broken-image fallback directly to every product image.
+  <div class="top-bar">
+    FREE SHIPPING ACROSS UAE | PREMIUM QUALITY | SECURE PACKAGING
+  </div>
 
-if "function imageFallback" not in text:
+  <header>
+    <div class="logo">DUBAI ABAYA FASHION</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Abayas</a></li>
+      <li><a href="#">Burqas</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </header>
 
-    insert = r'''
+  <div class="hero-title">
+    <h1>Dubai Abaya Fashion Collection</h1>
+    <p>আপনার পছন্দের আবায়ার মূল্য ও বিস্তারিত জানতে সরাসরি WhatsApp-এ যোগাযোগ করুন</p>
+  </div>
 
-function imageFallback(img){
+  <div class="container">
+    <div class="product-grid">
 
-  if(img.dataset.fallbackApplied) return;
+      <!-- Item 1 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="assets/image1.png" alt="প্রিমিয়াম ব্ল্যাক আবায়া" class="product-image" onerror="imageFallback(this)">
+          <button class="like-btn" onclick="toggleLike(this)">♥</button>
+        </div>
+        <div class="product-info">
+          <div class="product-title">প্রিমিয়াম ব্ল্যাক আবায়া</div>
+          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="size-option">
+            <label>সাইজ সিলেক্ট করুন:</label>
+            <select id="size-1" class="size-select">
+              <option value="52">52</option>
+              <option value="54">54</option>
+              <option value="56">56</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম ব্ল্যাক আবায়া (Design 1)', 'size-1')" class="btn-whatsapp">
+              WhatsApp অর্ডার করুন
+            </a>
+            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম ব্ল্যাক আবায়া (Price Query)', 'size-1')" class="btn-contact">
+              📞 কন্টাক্ট (Price)
+            </a>
+          </div>
+        </div>
+      </div>
 
-  img.dataset.fallbackApplied="1";
+      <!-- Item 2 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="assets/image2.png" alt="প্রিমিয়াম সি-গ্রিন আবায়া" class="product-image" onerror="imageFallback(this)">
+          <button class="like-btn" onclick="toggleLike(this)">♥</button>
+        </div>
+        <div class="product-info">
+          <div class="product-title">প্রিমিয়াম সি-গ্রিন আবায়া</div>
+          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="size-option">
+            <label>সাইজ সিলেক্ট করুন:</label>
+            <select id="size-2" class="size-select">
+              <option value="52">52</option>
+              <option value="54">54</option>
+              <option value="56">56</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম সি-গ্রিন আবায়া', 'size-2')" class="btn-whatsapp">
+              WhatsApp অর্ডার করুন
+            </a>
+            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম সি-গ্রিন আবায়া (Price Query)', 'size-2')" class="btn-contact">
+              📞 কন্টাক্ট (Price)
+            </a>
+          </div>
+        </div>
+      </div>
 
-  img.src="assets/abaya-black-wave.jpg";
+      <!-- Item 3 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="assets/image3.png" alt="প্রিমিয়াম ব্রাউন আবায়া" class="product-image" onerror="imageFallback(this)">
+          <button class="like-btn" onclick="toggleLike(this)">♥</button>
+        </div>
+        <div class="product-info">
+          <div class="product-title">প্রিমিয়াম ব্রাউন আবায়া</div>
+          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="size-option">
+            <label>সাইজ সিলেক্ট করুন:</label>
+            <select id="size-3" class="size-select">
+              <option value="52">52</option>
+              <option value="54">54</option>
+              <option value="56">56</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম ব্রাউন আবায়া', 'size-3')" class="btn-whatsapp">
+              WhatsApp অর্ডার করুন
+            </a>
+            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম ব্রাউন আবায়া (Price Query)', 'size-3')" class="btn-contact">
+              📞 কন্টাক্ট (Price)
+            </a>
+          </div>
+        </div>
+      </div>
 
-  img.onerror=null;
+      <!-- Item 4 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="assets/image4.png" alt="প্রিমিয়াম মোভ আবায়া" class="product-image" onerror="imageFallback(this)">
+          <button class="like-btn" onclick="toggleLike(this)">♥</button>
+        </div>
+        <div class="product-info">
+          <div class="product-title">প্রিমিয়াম মোভ আবায়া</div>
+          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="size-option">
+            <label>সাইজ সিলেক্ট করুন:</label>
+            <select id="size-4" class="size-select">
+              <option value="52">52</option>
+              <option value="54">54</option>
+              <option value="56">56</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম মোভ আবায়া', 'size-4')" class="btn-whatsapp">
+              WhatsApp অর্ডার করুন
+            </a>
+            <a href="#" onclick="orderWhatsApp('প্রিমিয়াম মোভ আবায়া (Price Query)', 'size-4')" class="btn-contact">
+              📞 কন্টাক্ট (Price)
+            </a>
+          </div>
+        </div>
+      </div>
 
-}
+      <!-- Item 5 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="assets/image5.png" alt="ডিপ গ্রিন লেস আবায়া" class="product-image" onerror="imageFallback(this)">
+          <button class="like-btn" onclick="toggleLike(this)">♥</button>
+        </div>
+        <div class="product-info">
+          <div class="product-title">ডিপ গ্রিন লেস আবায়া</div>
+          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="size-option">
+            <label>সাইজ সিলেক্ট করুন:</label>
+            <select id="size-5" class="size-select">
+              <option value="52">52</option>
+              <option value="54">54</option>
+              <option value="56">56</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <a href="#" onclick="orderWhatsApp('ডিপ গ্রিন লেস আবায়া', 'size-5')" class="btn-whatsapp">
+              WhatsApp অর্ডার করুন
+            </a>
+            <a href="#" onclick="orderWhatsApp('ডিপ গ্রিন লেস আবায়া (Price Query)', 'size-5')" class="btn-contact">
+              📞 কন্টাক্ট (Price)
+            </a>
+          </div>
+        </div>
+      </div>
 
-'''
+      <!-- Item 6 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="assets/image6.png" alt="লাইলাক পারপল আবায়া" class="product-image" onerror="imageFallback(this)">
+          <button class="like-btn" onclick="toggleLike(this)">♥</button>
+        </div>
+        <div class="product-info">
+          <div class="product-title">লাইলাক পারপল আবায়া</div>
+          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="size-option">
+            <label>সাইজ সিলেক্ট করুন:</label>
+            <select id="size-6" class="size-select">
+              <option value="52">52</option>
+              <option value="54">54</option>
+              <option value="56">56</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <a href="#" onclick="orderWhatsApp('লাইলাক পারপল আবায়া', 'size-6')" class="btn-whatsapp">
+              WhatsApp অর্ডার করুন
+            </a>
+            <a href="#" onclick="orderWhatsApp('লাইলাক পারপল আবায়া (Price Query)', 'size-6')" class="btn-contact">
+              📞 কন্টাক্ট (Price)
+            </a>
+          </div>
+        </div>
+      </div>
 
-    marker = "function openDetails(id){"
+      <!-- Item 7 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="assets/image7.png" alt="মোকা ব্রাউন এম্ব্রয়ডারি" class="product-image" onerror="imageFallback(this)">
+          <button class="like-btn" onclick="toggleLike(this)">♥</button>
+        </div>
+        <div class="product-info">
+          <div class="product-title">মোকা ব্রাউন এম্ব্রয়ডারি</div>
+          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="size-option">
+            <label>সাইজ সিলেক্ট করুন:</label>
+            <select id="size-7" class="size-select">
+              <option value="52">52</option>
+              <option value="54">54</option>
+              <option value="56">56</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <a href="#" onclick="orderWhatsApp('মোকা ব্রাউন এম্ব্রয়ডারি', 'size-7')" class="btn-whatsapp">
+              WhatsApp অর্ডার করুন
+            </a>
+            <a href="#" onclick="orderWhatsApp('মোকা ব্রাউন এম্ব্রয়ডারি (Price Query)', 'size-7')" class="btn-contact">
+              📞 কন্টাক্ট (Price)
+            </a>
+          </div>
+        </div>
+      </div>
 
-    if marker in text:
+      <!-- Item 8 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="assets/image8.png" alt="ডিজাইনার লুক আবায়া" class="product-image" onerror="imageFallback(this)">
+          <button class="like-btn" onclick="toggleLike(this)">♥</button>
+        </div>
+        <div class="product-info">
+          <div class="product-title">ডিজাইনার লুক আবায়া</div>
+          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="size-option">
+            <label>সাইজ সিলেক্ট করুন:</label>
+            <select id="size-8" class="size-select">
+              <option value="52">52</option>
+              <option value="54">54</option>
+              <option value="56">56</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <a href="#" onclick="orderWhatsApp('ডিজাইনার লুক আবায়া', 'size-8')" class="btn-whatsapp">
+              WhatsApp অর্ডার করুন
+            </a>
+            <a href="#" onclick="orderWhatsApp('ডিজাইনার লুক আবায়া (Price Query)', 'size-8')" class="btn-contact">
+              📞 কন্টাক্ট (Price)
+            </a>
+          </div>
+        </div>
+      </div>
 
-        text = text.replace(marker, insert + "\n" + marker, 1)
+      <!-- Item 9 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="assets/image9.png" alt="রয়্যাল রেড আবায়া" class="product-image" onerror="imageFallback(this)">
+          <button class="like-btn" onclick="toggleLike(this)">♥</button>
+        </div>
+        <div class="product-info">
+          <div class="product-title">রয়্যাল রেড আবায়া</div>
+          <div class="price-hidden-tag">মূল্য জানতে কল করুন বা WhatsApp মেসেজ দিন</div>
+          <div class="size-option">
+            <label>সাইজ সিলেক্ট করুন:</label>
+            <select id="size-9" class="size-select">
+              <option value="52">52</option>
+              <option value="54">54</option>
+              <option value="56">56</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <a href="#" onclick="orderWhatsApp('রয়্যাল রেড আবায়া', 'size-9')" class="btn-whatsapp">
+              WhatsApp অর্ডার করুন
+            </a>
+            <a href="#" onclick="orderWhatsApp('রয়্যাল রেড আবায়া (Price Query)', 'size-9')" class="btn-contact">
+              📞 কন্টাক্ট (Price)
+            </a>
+          </div>
+        </div>
+      </div>
 
-text = re.sub(
+    </div>
+  </div>
 
-    r'<img([^>]*?)src="(assets/[^"]+)"([^>]*)>',
+  <div class="bottom-banner">
+    <h3>প্রশ্ন আছে বা অর্ডার করতে চান?</h3>
+    <a href="https://wa.me/971567439129" target="_blank" class="banner-wa-btn">
+      💬 +971 567 43 9129
+    </a>
+  </div>
 
-    lambda m: f'<img{m.group(1)}src="{m.group(2)}"{m.group(3)} onerror="imageFallback(this)">',
+  <script>
+    // Like button functionality
+    function toggleLike(btn) {
+      btn.classList.toggle('active');
+    }
 
-    text,
+    // Image Fallback System
+    function imageFallback(img) {
+      if (img.dataset.fallbackApplied) return;
+      img.dataset.fallbackApplied = "1";
+      img.src = "assets/image1.png";
+    }
 
-    flags=re.I
+    // WhatsApp Message Function
+    function orderWhatsApp(productName, sizeSelectId) {
+      var size = document.getElementById(sizeSelectId).value;
+      var phoneNumber = "971567439129";
+      var message = "হ্যালো, আমি এই আবায়াটি সম্পর্কে জানতে / অর্ডার করতে চাই:\n\n" +
+                    "প্রোডাক্ট: " + productName + "\n" +
+                    "সাইজ: " + size;
+      
+      var whatsappUrl = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
 
-)
-
-html_path.write_text(text, encoding="utf-8")
-
-# Repack cleanly with index.html at the root for easier hosting, plus assets folder.
-
-out = Path("/mnt/data/Dubai_Abaya_Fashion_FIXED.zip")
-
-with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-
-    for p in html_path.parent.rglob("*"):
-
-        if p.is_file():
-
-            z.write(p, p.relative_to(html_path.parent))
-
-print(out)
+</body>
+</html>
