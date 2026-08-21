@@ -305,13 +305,17 @@
               <option value="52">52</option>
               <option value="54">54</option>
               <option value="56">56</option>
+			   <option value="58">58</option>
+              <option value="60">60</option>
+              <option value="62">62</option>
             </select>
           </div>
           <div class="btn-group">
             <a href="#" onclick="orderWhatsApp('Premium Black Abaya', 'size-1')" class="btn-whatsapp">
               WhatsApp Order
             </a>
-            <a href="#" onclick="orderWhatsApp('Premium Black Abaya (Price Query)', 'size-1')" class="btn-contact">
+            <a href="#" <img width="533" height="711" alt="image" src="https://github.com/user-attachments/assets/1c14f00d-dd9d-483a-907e-fbc1399a13df" />
+="orderWhatsApp('Premium Black Abaya (Price Query)', 'size-1')" class="btn-contact">
               📞 Contact (Price)
             </a>
           </div>
