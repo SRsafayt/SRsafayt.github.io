@@ -286,6 +286,8 @@
   </div>
 
   <div class="container">
+    <img width="533" height="711" alt="image" src="https://github.com/user-attachments/assets/539d7427-4a17-4534-a0cc-e950328e7731" />
+
     <div class="product-grid">
 
       <!-- Item 1 -->
