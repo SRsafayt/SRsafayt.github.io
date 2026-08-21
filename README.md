@@ -315,6 +315,20 @@
               WhatsApp Order
             </a>
             <a href="#" <img width="533" height="711" alt="image" src="https://github.com/user-attachments/assets/1c14f00d-dd9d-483a-907e-fbc1399a13df" />
+			<!-- উদাহরণস্বরূপ সঠিক HTML স্ট্রাকচার -->
+<div class="product-card">
+  <!-- আপনার ছবি যদি 'images' নামক ফোল্ডারে থাকে -->
+  <img src="images/black-abaya.jpg" alt="Premium Black Abaya">
+  <h3>Premium Black Abaya</h3>
+  <p>Contact via WhatsApp to know price</p>
+  <label for="size1">Select Size:</label>
+  <select id="size1">
+    <option value="52">52</option>
+    <option value="54">54</option>
+  </select>
+  <a href="https://wa.me/971567439129" class="whatsapp-btn">WhatsApp Order</a>
+</div>
+
 ="orderWhatsApp('Premium Black Abaya (Price Query)', 'size-1')" class="btn-contact">
               📞 Contact (Price)
             </a>
