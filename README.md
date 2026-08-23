@@ -6,13 +6,7 @@
     <title>Dubai Abaya Fashion</title>
     <style>
     
- ⁠.carousel-container⁠ { width: 100%; overflow: hidden; }
-  .carousel-track { display: flex; animation: slide 20s linear infinite; }
-  .carousel-track img { width: 100%; }
-  @keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-300%); }
-  }
+
         
 </style>
 
