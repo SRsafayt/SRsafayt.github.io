@@ -126,7 +126,8 @@
 <body>
 <div class="carousel-container">
   <div class="carousel-track">
-    <img src="<img width="828" height="1251" alt="image" src="https://github.com/user-attachments/assets/eaa526d1-c904-412b-bd06-5d806dd63a4e" />
+    <img src="[https://github.com/user-attachments/assets/eaa526d1-c904-412b-bd06-5d806dd63a4e](https://github.com/user-attachments/assets/eaa526d1-c904-412b-bd06-5d806dd63a4e)" width="120" height="200" alt="Abaya 1" />
+
 " alt="Abaya 1">
     <img src="abaya2.jpg" alt="Abaya 2">
     <img src="abaya3.jpg" alt="Abaya 3">
