@@ -119,7 +119,7 @@
     <!-- Replace this container with your <img> tag when ready -->
     <div class="image-placeholder">
        
- <span> <img width="300" height="500" alt="image" src="https://github.com/user-attachments/assets/bb7e12fe-ad4f-41c4-a99c-96b5dd670171" />
+ <span> <img width="70" height="200" alt="image" src="https://github.com/user-attachments/assets/bb7e12fe-ad4f-41c4-a99c-96b5dd670171" />
  </span>
     </div>
 
