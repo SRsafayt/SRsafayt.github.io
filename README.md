@@ -190,10 +190,9 @@
 <img width="170" height="300" alt="IMG_1397" src="https://github.com/user-attachments/assets/3429af2e-4ce1-458c-af09-39e4737fab88" />
 <img width="170" height="300" alt="IMG_1399" src="https://github.com/user-attachments/assets/8f84f746-f3fe-4999-bac2-caf88a34a0e9" />
 <img width="170" height="300" alt="IMG_1400" src="https://github.com/user-attachments/assets/73682b46-6d25-4b77-bdba-08faa5218916" />
-<img width="170" height="300" alt="IMG_1401" src="https://github.com/user-attachments/assets/7fac8950-70b4-4641-a579-89ed04c58546" />
+<img width="170" height="300" alt="IMG_1401" src="https://github.com/user-attachments/assets/7fac8950-70b4-4641-a579-89ed04c58546"/>
 
-
-https://github.com/user-attachments/assets/b66071c2-fa3d-429d-8d26-9033ab4c1cda
+ <video src="https://github.com/user-attachments/assets/b66071c2-fa3d-429d-8d26-9033ab4c1cda " width="100%" controls></video>
 
 <img width="170" height="300" alt="IMG_1470" src="https://github.com/user-attachments/assets/a454e539-7133-44a7-9501-d9452cd97c88" />
 <img width="170" height="300" alt="IMG_1469" src="https://github.com/user-attachments/assets/c181a653-8de1-4789-a1f7-f61006414b50" />
