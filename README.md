@@ -118,8 +118,9 @@
 
     <!-- Replace this container with your <img> tag when ready -->
     <div class="image-placeholder">
-       <img width="570" height="1036" alt="image" src="https://github.com/user-attachments/assets/5a518a86-d68e-45c5-8c5d-e47e3506c420" />
- <span>Insert Product Image Here</span>
+       
+ <span> <img width="570" height="1036" alt="image" src="https://github.com/user-attachments/assets/bb7e12fe-ad4f-41c4-a99c-96b5dd670171" />
+ </span>
     </div>
 
     <div class="option-group">
