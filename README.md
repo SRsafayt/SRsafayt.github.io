@@ -118,15 +118,6 @@
 
 
 <body>
-<div class="carousel-container">
-  <div class="carousel-track">
-    <img src="[https://github.com/user-attachments/assets/eaa526d1-c904-412b-bd06-5d806dd63a4e](https://github.com/user-attachments/assets/eaa526d1-c904-412b-bd06-5d806dd63a4e)" width="120" height="200" alt="Abaya 1" />
-
-
-    <img src="abaya2.jpg" alt="Abaya 2">
-    <img src="abaya3.jpg" alt="Abaya 3">
-  </div>
-</div>
 
 
 <div class="product-card">
@@ -209,6 +200,21 @@
 <img width="170" height="300" alt="IMG_1399" src="https://github.com/user-attachments/assets/8f84f746-f3fe-4999-bac2-caf88a34a0e9" />
 <img width="170" height="300" alt="IMG_1400" src="https://github.com/user-attachments/assets/73682b46-6d25-4b77-bdba-08faa5218916" />
 <img width="170" height="300" alt="IMG_1401" src="https://github.com/user-attachments/assets/7fac8950-70b4-4641-a579-89ed04c58546"/>
+
+
+
+
+
+<video src=" https://github.com/user-attachments/assets/8443df61-df90-4e62-abf7-8283249a1c3b
+" width="100%" controls></video>
+
+
+
+<video src=" https://github.com/user-attachments/assets/483ff461-2c51-4f14-862d-5067f44e0c0a" width="100%" controls></video>
+
+<img width="4032" height="3024" alt="IMG_1402" src="https://github.com/user-attachments/assets/8b313cbe-3b1c-4c6b-b080-dac90052b947" />
+
+
 
  <video src="https://github.com/user-attachments/assets/b66071c2-fa3d-429d-8d26-9033ab4c1cda " width="100%" controls></video>
 
