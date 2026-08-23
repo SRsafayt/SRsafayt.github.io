@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dubai Abaya Fashion</title>
     <style>
-    <style>
+    
   .carousel-container { width: 100%; overflow: hidden; }
   .carousel-track { display: flex; animation: slide 20s linear infinite; }
   .carousel-track img { width: 100%; }
@@ -13,6 +13,7 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-300%); }
   }
+        </style>
 </style>
 
         * {
@@ -125,7 +126,8 @@
 <body>
 <div class="carousel-container">
   <div class="carousel-track">
-    <img src="abaya1.jpg" alt="Abaya 1">
+    <img src="<img width="828" height="1251" alt="image" src="https://github.com/user-attachments/assets/eaa526d1-c904-412b-bd06-5d806dd63a4e" />
+" alt="Abaya 1">
     <img src="abaya2.jpg" alt="Abaya 2">
     <img src="abaya3.jpg" alt="Abaya 3">
   </div>
