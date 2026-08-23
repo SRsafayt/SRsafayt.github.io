@@ -123,8 +123,8 @@
  </span>
     </div>
 
-    <dib><span> <img width="150" height="270" alt="image" src="https://github.com/user-attachments/assets/faf3393e-1f27-46bd-ad86-4ff0063e6e75" />
-</<dib></span>
+    <img width="150" height="270" alt="image" src="https://github.com/user-attachments/assets/faf3393e-1f27-46bd-ad86-4ff0063e6e75" />
+
     <div class="option-group">
         <label>Select Size:</label>
         <div class="options-grid">
