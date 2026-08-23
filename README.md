@@ -124,9 +124,7 @@
     </div>
 
    
-    <!-- Replace this container with your <img> tag when ready -->
-    <div class="image-placeholder">
-    <img width="150" height="270" alt="image" src="https://github.com/user-attachments/assets/faf3393e-1f27-46bd-ad86-4ff0063e6e75" />
+    
 
     <div class="option-group">
         <label>Select Size:</label>
