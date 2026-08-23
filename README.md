@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dubai Abaya Fashion</title>
     <style>
+    <style>
+  .carousel-container { width: 100%; overflow: hidden; }
+  .carousel-track { display: flex; animation: slide 20s linear infinite; }
+  .carousel-track img { width: 100%; }
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-300%); }
+  }
+</style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -109,7 +119,18 @@
         }
     </style>
 </head>
+ 
+
+
 <body>
+<div class="carousel-container">
+  <div class="carousel-track">
+    <img src="abaya1.jpg" alt="Abaya 1">
+    <img src="abaya2.jpg" alt="Abaya 2">
+    <img src="abaya3.jpg" alt="Abaya 3">
+  </div>
+</div>
+
 
 <div class="product-card">
     <div class="logo-area">
