@@ -210,9 +210,7 @@
 
 
 
-<video src="https://github.com/user-attachments/assets/483ff461-2c51-4f14-862d-5067f44e0c0a " width="100%" controls></video>
-
-
+<video src="https://github.com/user-attachments/assets/483ff461-2c51-4f14-862d-5067f44e0c0a " width="100%" controls></
 
 
 
@@ -223,6 +221,10 @@
 <img width="170" height="300" alt="IMG_1471" src="https://github.com/user-attachments/assets/5be08b9e-c0cf-4e42-ab26-c89ba3d4b26c" />
 <img width="170" height="300" alt="IMG_1472" src="https://github.com/user-attachments/assets/2bddf26b-5e08-430a-9bd4-f84943270594" />
 
+
+
+<video src=" https://github.com/user-attachments/assets/a232dc81-0265-40d0-afd7-516a8ae5e241
+" width="100" controls></video>
 
 
 
