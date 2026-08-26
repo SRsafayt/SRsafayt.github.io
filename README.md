@@ -10,16 +10,19 @@
     .container { max-width: 500px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
     h1 { text-align: center; font-size: 22px; margin-bottom: 15px; }
     
-    /* Product Display */
     .media-box { width: 100%; border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
-    .media-box img, .media-box video { width: 100%; display: block; border-radius: 8px; }
+    .media-box img { width: 100%; display: block; border-radius: 8px; }
     
     .section-title { font-weight: bold; margin: 15px 0 8px; font-size: 14px; }
     .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
     .btn { padding: 10px; border: 1px solid #ccc; background: #fff; border-radius: 6px; cursor: pointer; text-align: center; font-size: 13px; }
     .btn.selected { border-color: #007bff; background: #e6f0ff; color: #007bff; font-weight: bold; }
     
-    /* Interaction Section */
+    /* Quantity Control */
+    .qty-container { display: flex; align-items: center; gap: 10px; margin-top: 5px; }
+    .qty-btn { width: 40px; height: 40px; font-size: 18px; font-weight: bold; background: #f0f2f5; border: 1px solid #ccc; border-radius: 6px; cursor: pointer; }
+    .qty-input { width: 60px; height: 40px; text-align: center; font-size: 16px; font-weight: bold; border: 1px solid #ccc; border-radius: 6px; }
+
     .interaction-bar { display: flex; align-items: center; justify-content: space-between; margin: 15px 0; padding: 10px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
     .like-btn { background: #f0f2f5; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
     .like-btn.liked { background: #ffe6e6; color: #e74c3c; }
@@ -37,18 +40,15 @@
 <div class="container">
   <h1>DUBAI ABAYA FASHION</h1>
   
-  <!-- Main Display Media -->
-  <div class="media-box" id="media-container">
+  <div class="media-box">
     <img id="main-image" src="https://srasafayt.github.io/image1.jpg" alt="Dubai Abaya">
   </div>
 
-  <!-- Like Button -->
   <div class="interaction-bar">
     <button class="like-btn" id="like-btn" onclick="toggleLike()">❤️ Like <span id="like-count">0</span></button>
     <span style="font-size: 12px; color: #777;">Dubai Abaya Collection</span>
   </div>
 
-  <!-- Size Selection -->
   <div class="section-title">Select Size:</div>
   <div class="options-grid" id="size-options">
     <button class="btn" onclick="selectOpt('size', this, '52')">52</button>
@@ -59,7 +59,6 @@
     <button class="btn" onclick="selectOpt('size', this, '62')">62</button>
   </div>
 
-  <!-- Color Selection -->
   <div class="section-title">Select Color:</div>
   <div class="options-grid" id="color-options">
     <button class="btn" onclick="selectOpt('color', this, 'Black')">Black</button>
@@ -70,10 +69,16 @@
     <button class="btn" onclick="selectOpt('color', this, 'Grey')">Grey</button>
   </div>
 
-  <!-- Order WhatsApp Link -->
+  <!-- How Many Pieces (Quantity) -->
+  <div class="section-title">How Many Pieces:</div>
+  <div class="qty-container">
+    <button class="qty-btn" onclick="updateQty(-1)">-</button>
+    <input type="number" id="qty-input" class="qty-input" value="1" min="1" readonly>
+    <button class="qty-btn" onclick="updateQty(1)">+</button>
+  </div>
+
   <a id="whatsapp-link" href="#" target="_blank" class="whatsapp-btn" onclick="sendWhatsApp(event)">Order via WhatsApp</a>
 
-  <!-- Comment Section -->
   <div class="comment-section">
     <div class="section-title">Leave a Comment:</div>
     <textarea id="comment-input" class="comment-box" rows="2" placeholder="Write your comment here..."></textarea>
@@ -86,6 +91,7 @@
 <script>
   let selectedSize = '';
   let selectedColor = '';
+  let quantity = 1;
   let likeCount = 0;
   let isLiked = false;
   const phoneNumber = '971567439129';
@@ -96,6 +102,11 @@
     element.classList.add('selected');
     if (type === 'size') selectedSize = value;
     if (type === 'color') selectedColor = value;
+  }
+
+  function updateQty(change) {
+    quantity = Math.max(1, quantity + change);
+    document.getElementById('qty-input').value = quantity;
   }
 
   function toggleLike() {
@@ -119,7 +130,7 @@
       e.preventDefault();
       return;
     }
-    const msg = encodeURIComponent(`Hello Dubai Abaya Fashion,\nI want to order:\nSize: ${selectedSize}\nColor: ${selectedColor}`);
+    const msg = encodeURIComponent(`Hello Dubai Abaya Fashion,\nI want to order:\n- Size: ${selectedSize}\n- Color: ${selectedColor}\n- Quantity: ${quantity} Pcs`);
     document.getElementById('whatsapp-link').href = `https://wa.me/${phoneNumber}?text=${msg}`;
   }
 
