@@ -28,7 +28,8 @@
     .qty-btn { width: 24px; height: 24px; font-size: 13px; font-weight: bold; background: #fff; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; }
     .qty-input { width: 30px; height: 24px; text-align: center; font-size: 12px; font-weight: bold; border: 1px solid #ccc; border-radius: 4px; background: #fff; }
 
-    .whatsapp-btn { display: block; width: 100%; padding: 14px; background: #25D366; color: white; text-align: center; font-weight: bold; text-decoration: none; border-radius: 8px; margin-top: 20px; font-size: 16px; }
+    .whatsapp-btn { display: block; width: 100%; padding: 14px; background: #25D366; color: white; text-align: center; font-weight: bold; text-decoration: <img width="720" height="1280" alt="05d58716-0fe6-474e-9e41-7f6c626e43ff" src="https://github.com/user-attachments/assets/282b2ef3-fad3-48a7-acbf-d12da927e3da" />
+none; border-radius: 8px; margin-top: 20px; font-size: 16px; }
 
     .comment-section { margin-top: 20px; }
     .comment-box { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 8px; resize: none; font-size: 13px; }
@@ -48,6 +49,81 @@
          <span> <img width="270" height="350" alt="image" src="https://github.com/user-attachments/assets/bb7e12fe-ad4f-41c4-a99c-96b5dd670171" />
  </span>
     </div>
+    <div class="product-card" id="product-2">
+  <div class="media-box">
+    <spam> <img width="270" height="350" alt="Dubai Abaya Design" src="https://github.com/user-attachments/assets/56509a2d-9bde-4a19-8951-1c6cb057d661" />
+ <img width="270" height="350" alt="IMG_0584" src="https://github.com/user-attachments/assets/af9f5157-79b4-4c91-9e3c-fee987d6eab5 " </img>
+  </div>
+
+  <div class="interaction-bar">
+    <button class="like-btn" onclick="toggleLike(this)">❤️ <span class="like-count">0</span></button>
+    <span style="font-size: 12px; color: #666;">Design #2</span>
+  </div>
+
+  <!-- Color Selection -->
+  <div class="section-title">Select Color & Quantity:</div>
+  <div class="selection-grid">
+    <div class="selection-item">
+      <span class="item-label">Black</span>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+        <input type="number" class="qty-input" value="0" min="0" readonly>
+        <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="selection-item">
+      <span class="item-label">Off White</span>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+        <input type="number" class="qty-input" value="0" min="0" readonly>
+        <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="selection-item">
+      <span class="item-label">Navy Blue</span>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+        <input type="number" class="qty-input" value="0" min="0" readonly>
+        <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Size Selection -->
+  <div class="section-title">Select Size & Quantity:</div>
+  <div class="selection-grid">
+    <div class="selection-item">
+      <span class="item-label">Size 52</span>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+        <input type="number" class="qty-input" value="0" min="0" readonly>
+        <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="selection-item">
+      <span class="item-label">Size 54</span>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+        <input type="number" class="qty-input" value="0" min="0" readonly>
+        <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="selection-item">
+      <span class="item-label">Size 56</span>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+        <input type="number" class="qty-input" value="0" min="0" readonly>
+        <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Button -->
+  <a href="#" target="_blank" class="whatsapp-btn" onclick="sendWhatsAppOrder(event, 'product-2', 'Dubai Abaya Design #2')">
+    Order via WhatsApp
+  </a>
+</div>
+
 
     <div class="interaction-bar">
       <button class="like-btn" onclick="toggleLike(this)">❤️ Like <span class="like-count">0</span></button>
