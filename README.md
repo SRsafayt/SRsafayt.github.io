@@ -44,7 +44,9 @@
 
   <div class="product-card" id="product-1">
     <div class="media-box">
-      <img src="https://srasafayt.github.io/image1.jpg" alt="Abaya Design 1">
+      
+         <span> <img width="270" height="350" alt="image" src="https://github.com/user-attachments/assets/bb7e12fe-ad4f-41c4-a99c-96b5dd670171" />
+ </span>
     </div>
 
     <div class="interaction-bar">
