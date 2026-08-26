@@ -51,7 +51,7 @@ none; border-radius: 8px; margin-top: 20px; font-size: 16px; }
     </div>
     <div class="product-card" id="product-2">
   <div class="media-box">
-    <spam> <img width="270" height="350" alt="Dubai Abaya Design" src="https://github.com/user-attachments/assets/56509a2d-9bde-4a19-8951-1c6cb057d661" />
+    <img width="270" height="350" alt="Dubai Abaya Design" src="https://github.com/user-attachments/assets/56509a2d-9bde-4a19-8951-1c6cb057d661" />
  <img width="270" height="350" alt="IMG_0584" src="https://github.com/user-attachments/assets/af9f5157-79b4-4c91-9e3c-fee987d6eab5 " </img>
   </div>
 
