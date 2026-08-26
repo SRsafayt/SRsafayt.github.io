@@ -3,41 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dubai Abaya Fashion Catalog</title>
+  <title>Dubai Abaya Fashion</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
     body { background-color: #f4f4f9; padding: 15px; color: #333; }
     .catalog-container { max-width: 600px; margin: 0 auto; }
-    h1 { text-align: center; font-size: 24px; margin-bottom: 20px; color: #222; }
+    h1 { text-align: center; font-size: 24px; margin-bottom: 20px; color: #111; }
     
-    /* Product Card */
-    .product-card { background: #fff; border-radius: 10px; padding: 15px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .product-card { background: #fff; border-radius: 12px; padding: 18px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
     .product-img { width: 100%; border-radius: 8px; display: block; margin-bottom: 12px; }
     
-    /* Interaction Bar */
-    .interaction-bar { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; margin-bottom: 12px; }
-    .like-btn { background: #f0f2f5; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+    .interaction-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; margin-bottom: 15px; }
+    .like-btn { background: #f0f2f5; border: none; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-weight: bold; }
     .like-btn.liked { background: #ffe6e6; color: #e74c3c; }
 
-    /* Selection Fields */
-    .section-title { font-weight: bold; margin: 10px 0 5px; font-size: 13px; color: #555; }
-    .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-    .btn { padding: 8px; border: 1px solid #ccc; background: #fff; border-radius: 6px; cursor: pointer; text-align: center; font-size: 13px; }
-    .btn.selected { border-color: #007bff; background: #e6f0ff; color: #007bff; font-weight: bold; }
+    .section-title { font-weight: bold; margin: 15px 0 8px; font-size: 14px; color: #222; border-left: 3px solid #007bff; padding-left: 8px; }
+    
+    /* Grid Selection with Quantity */
+    .selection-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 10px; }
+    .selection-item { border: 1px solid #e0e0e0; border-radius: 8px; padding: 8px; background: #fafafa; display: flex; align-items: center; justify-content: space-between; }
+    .selection-item.active { border-color: #007bff; background: #e6f0ff; }
+    .item-label { font-size: 13px; font-weight: 600; }
+    
+    .qty-controls { display: flex; align-items: center; gap: 5px; }
+    .qty-btn { width: 26px; height: 26px; font-size: 14px; font-weight: bold; background: #fff; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; }
+    .qty-input { width: 32px; height: 26px; text-align: center; font-size: 13px; font-weight: bold; border: 1px solid #ccc; border-radius: 4px; background: #fff; }
 
-    /* Quantity Input */
-    .qty-container { display: flex; align-items: center; gap: 8px; margin-top: 5px; }
-    .qty-btn { width: 35px; height: 35px; font-size: 16px; font-weight: bold; background: #f0f2f5; border: 1px solid #ccc; border-radius: 6px; cursor: pointer; }
-    .qty-input { width: 50px; height: 35px; text-align: center; font-size: 15px; font-weight: bold; border: 1px solid #ccc; border-radius: 6px; }
+    .whatsapp-btn { display: block; width: 100%; padding: 14px; background: #25D366; color: white; text-align: center; font-weight: bold; text-decoration: none; border-radius: 8px; margin-top: 20px; font-size: 16px; }
 
-    /* WhatsApp Button */
-    .whatsapp-btn { display: block; width: 100%; padding: 12px; background: #25D366; color: white; text-align: center; font-weight: bold; text-decoration: none; border-radius: 6px; margin-top: 15px; font-size: 15px; }
-
-    /* Comment Section */
-    .comment-section { margin-top: 15px; }
-    .comment-box { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 6px; resize: none; font-size: 13px; }
-    .comment-list { margin-top: 8px; font-size: 12px; max-height: 120px; overflow-y: auto; }
-    .comment-item { background: #f9f9f9; padding: 6px 10px; border-radius: 5px; margin-bottom: 4px; border-left: 3px solid #007bff; }
+    .comment-section { margin-top: 20px; }
+    .comment-box { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 8px; resize: none; font-size: 13px; }
+    .submit-btn { width: 100%; padding: 8px; background: #333; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+    .comment-list { margin-top: 10px; font-size: 12px; max-height: 120px; overflow-y: auto; }
+    .comment-item { background: #f9f9f9; padding: 8px; border-radius: 5px; margin-bottom: 5px; border-left: 3px solid #007bff; }
   </style>
 </head>
 <body>
@@ -45,54 +43,113 @@
 <div class="catalog-container">
   <h1>DUBAI ABAYA FASHION</h1>
 
-  <!-- Product 1 -->
+  <!-- Product Card 1 -->
   <div class="product-card" id="product-1">
-    <img src="https://srasafayt.github.io/image1.jpg" alt="Dubai Abaya Design 1" class="product-img">
+    <img src="https://srasafayt.github.io/image1.jpg" alt="Abaya Design 1" class="product-img">
 
-    <!-- Like Button -->
     <div class="interaction-bar">
       <button class="like-btn" onclick="toggleLike(this)">❤️ Like <span class="like-count">0</span></button>
-      <span style="font-size: 12px; color: #777;">Design #1</span>
+      <span style="font-size: 12px; color: #666;">Design #1</span>
     </div>
 
-    <!-- Size Selection (52 to 62) -->
-    <div class="section-title">Which Size:</div>
-    <div class="options-grid size-options">
-      <button class="btn" onclick="selectOpt(this, 'size')">52</button>
-      <button class="btn" onclick="selectOpt(this, 'size')">54</button>
-      <button class="btn" onclick="selectOpt(this, 'size')">56</button>
-      <button class="btn" onclick="selectOpt(this, 'size')">58</button>
-      <button class="btn" onclick="selectOpt(this, 'size')">60</button>
-      <button class="btn" onclick="selectOpt(this, 'size')">62</button>
+    <!-- Color Breakdown Selection -->
+    <div class="section-title">Select Color & Quantity:</div>
+    <div class="selection-grid color-grid">
+      <div class="selection-item">
+        <span class="item-label">Black</span>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+          <input type="number" class="qty-input" value="0" min="0" readonly>
+          <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+        </div>
+      </div>
+      <div class="selection-item">
+        <span class="item-label">Off White</span>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+          <input type="number" class="qty-input" value="0" min="0" readonly>
+          <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+        </div>
+      </div>
+      <div class="selection-item">
+        <span class="item-label">Navy Blue</span>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+          <input type="number" class="qty-input" value="0" min="0" readonly>
+          <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+        </div>
+      </div>
+      <div class="selection-item">
+        <span class="item-label">Maroon</span>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+          <input type="number" class="qty-input" value="0" min="0" readonly>
+          <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+        </div>
+      </div>
     </div>
 
-    <!-- Color Selection -->
-    <div class="section-title">Which Color:</div>
-    <div class="options-grid color-options">
-      <button class="btn" onclick="selectOpt(this, 'color')">Black</button>
-      <button class="btn" onclick="selectOpt(this, 'color')">Maroon</button>
-      <button class="btn" onclick="selectOpt(this, 'color')">Navy Blue</button>
-      <button class="btn" onclick="selectOpt(this, 'color')">Beige</button>
-      <button class="btn" onclick="selectOpt(this, 'color')">Olive Green</button>
-      <button class="btn" onclick="selectOpt(this, 'color')">Grey</button>
+    <!-- Size Breakdown Selection -->
+    <div class="section-title">Select Size & Quantity:</div>
+    <div class="selection-grid size-grid">
+      <div class="selection-item">
+        <span class="item-label">Size 52</span>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+          <input type="number" class="qty-input" value="0" min="0" readonly>
+          <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+        </div>
+      </div>
+      <div class="selection-item">
+        <span class="item-label">Size 54</span>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+          <input type="number" class="qty-input" value="0" min="0" readonly>
+          <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+        </div>
+      </div>
+      <div class="selection-item">
+        <span class="item-label">Size 56</span>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+          <input type="number" class="qty-input" value="0" min="0" readonly>
+          <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+        </div>
+      </div>
+      <div class="selection-item">
+        <span class="item-label">Size 58</span>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+          <input type="number" class="qty-input" value="0" min="0" readonly>
+          <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+        </div>
+      </div>
+      <div class="selection-item">
+        <span class="item-label">Size 60</span>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+          <input type="number" class="qty-input" value="0" min="0" readonly>
+          <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+        </div>
+      </div>
+      <div class="selection-item">
+        <span class="item-label">Size 62</span>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+          <input type="number" class="qty-input" value="0" min="0" readonly>
+          <button class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+        </div>
+      </div>
     </div>
 
-    <!-- How Many Pieces (Quantity) -->
-    <div class="section-title">How Many Pieces:</div>
-    <div class="qty-container">
-      <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
-      <input type="number" class="qty-input" value="1" min="1" readonly>
-      <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
-    </div>
-
-    <!-- Order via WhatsApp -->
-    <a href="#" target="_blank" class="whatsapp-btn" onclick="sendWhatsApp(event, 'product-1', 'Design 1')">Order via WhatsApp</a>
+    <!-- WhatsApp Order Link -->
+    <a href="#" target="_blank" class="whatsapp-btn" onclick="sendWhatsAppOrder(event, 'product-1', 'Design 1')">Order via WhatsApp</a>
 
     <!-- Comments -->
     <div class="comment-section">
       <div class="section-title">Leave a Comment:</div>
       <textarea class="comment-box" rows="2" placeholder="Write a comment about this design..."></textarea>
-      <button class="btn" style="width: 100%; background: #333; color: white;" onclick="addComment(this)">Submit Comment</button>
+      <button class="submit-btn" onclick="addComment(this)">Submit Comment</button>
       <div class="comment-list"></div>
     </div>
   </div>
@@ -102,19 +159,19 @@
 <script>
   const phoneNumber = '971567439129';
 
-  function selectOpt(element, type) {
-    const parent = element.parentElement;
-    const buttons = parent.getElementsByClassName('btn');
-    for (let btn of buttons) btn.classList.remove('selected');
-    element.classList.add('selected');
-  }
-
-  function updateQty(element, change) {
-    const container = element.parentElement;
+  function adjustQty(button, change) {
+    const container = button.parentElement;
     const input = container.querySelector('.qty-input');
-    let currentQty = parseInt(input.value) || 1;
-    currentQty = Math.max(1, currentQty + change);
-    input.value = currentQty;
+    const wrapper = container.closest('.selection-item');
+    let val = parseInt(input.value) || 0;
+    val = Math.max(0, val + change);
+    input.value = val;
+
+    if (val > 0) {
+      wrapper.classList.add('active');
+    } else {
+      wrapper.classList.remove('active');
+    }
   }
 
   function toggleLike(btn) {
@@ -129,23 +186,38 @@
     }
   }
 
-  function sendWhatsApp(event, cardId, designName) {
+  function sendWhatsAppOrder(event, cardId, designName) {
     const card = document.getElementById(cardId);
-    const selectedSizeBtn = card.querySelector('.size-options .btn.selected');
-    const selectedColorBtn = card.querySelector('.color-options .btn.selected');
-    const qty = card.querySelector('.qty-input').value;
+    
+    // Collect Colors
+    let colorDetails = [];
+    card.querySelectorAll('.color-grid .selection-item').forEach(item => {
+      const label = item.querySelector('.item-label').innerText;
+      const qty = parseInt(item.querySelector('.qty-input').value) || 0;
+      if (qty > 0) {
+        colorDetails.push(`${label}: ${qty} Pcs`);
+      }
+    });
 
-    if (!selectedSizeBtn || !selectedColorBtn) {
-      alert('Please select both Size and Color before ordering!');
+    // Collect Sizes
+    let sizeDetails = [];
+    card.querySelectorAll('.size-grid .selection-item').forEach(item => {
+      const label = item.querySelector('.item-label').innerText;
+      const qty = parseInt(item.querySelector('.qty-input').value) || 0;
+      if (qty > 0) {
+        sizeDetails.push(`${label}: ${qty} Pcs`);
+      }
+    });
+
+    if (colorDetails.length === 0 || sizeDetails.length === 0) {
+      alert('Please select at least one Color quantity and one Size quantity!');
       event.preventDefault();
       return;
     }
 
-    const size = selectedSizeBtn.innerText;
-    const color = selectedColorBtn.innerText;
+    let messageText = `Hello Dubai Abaya Fashion,\nI want to place an order for *${designName}*:\n\n*Colors Ordered:*\n- ${colorDetails.join('\n- ')}\n\n*Sizes Ordered:*\n- ${sizeDetails.join('\n- ')}`;
 
-    const message = encodeURIComponent(`Hello Dubai Abaya Fashion,\nI want to order:\n- Item: ${designName}\n- Size: ${size}\n- Color: ${color}\n- Quantity: ${qty} Pcs`);
-    event.target.href = `https://wa.me/${phoneNumber}?text=${message}`;
+    event.target.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageText)}`;
   }
 
   function addComment(btn) {
