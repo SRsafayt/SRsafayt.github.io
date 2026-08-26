@@ -9,12 +9,17 @@
     body { background-color: #f4f4f9; padding: 15px; color: #333; }
     .container { max-width: 500px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
     h1 { text-align: center; font-size: 22px; margin-bottom: 15px; }
-    .product-img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
+    
+    /* Product Display */
+    .media-box { width: 100%; border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
+    .media-box img, .media-box video { width: 100%; display: block; border-radius: 8px; }
+    
     .section-title { font-weight: bold; margin: 15px 0 8px; font-size: 14px; }
     .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
     .btn { padding: 10px; border: 1px solid #ccc; background: #fff; border-radius: 6px; cursor: pointer; text-align: center; font-size: 13px; }
     .btn.selected { border-color: #007bff; background: #e6f0ff; color: #007bff; font-weight: bold; }
     
+    /* Interaction Section */
     .interaction-bar { display: flex; align-items: center; justify-content: space-between; margin: 15px 0; padding: 10px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
     .like-btn { background: #f0f2f5; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
     .like-btn.liked { background: #ffe6e6; color: #e74c3c; }
@@ -32,16 +37,18 @@
 <div class="container">
   <h1>DUBAI ABAYA FASHION</h1>
   
-  <!-- 1. Product Image -->
-  <img id="main-image" src="https://via.placeholder.com/400x500" alt="Dubai Abaya" class="product-img">
+  <!-- Main Display Media -->
+  <div class="media-box" id="media-container">
+    <img id="main-image" src="https://srasafayt.github.io/image1.jpg" alt="Dubai Abaya">
+  </div>
 
-  <!-- 2. Like Button -->
+  <!-- Like Button -->
   <div class="interaction-bar">
     <button class="like-btn" id="like-btn" onclick="toggleLike()">❤️ Like <span id="like-count">0</span></button>
     <span style="font-size: 12px; color: #777;">Dubai Abaya Collection</span>
   </div>
 
-  <!-- 3. Size Selection -->
+  <!-- Size Selection -->
   <div class="section-title">Select Size:</div>
   <div class="options-grid" id="size-options">
     <button class="btn" onclick="selectOpt('size', this, '52')">52</button>
@@ -52,7 +59,7 @@
     <button class="btn" onclick="selectOpt('size', this, '62')">62</button>
   </div>
 
-  <!-- 4. Color Selection -->
+  <!-- Color Selection -->
   <div class="section-title">Select Color:</div>
   <div class="options-grid" id="color-options">
     <button class="btn" onclick="selectOpt('color', this, 'Black')">Black</button>
@@ -63,10 +70,10 @@
     <button class="btn" onclick="selectOpt('color', this, 'Grey')">Grey</button>
   </div>
 
-  <!-- 5. WhatsApp Button -->
+  <!-- Order WhatsApp Link -->
   <a id="whatsapp-link" href="#" target="_blank" class="whatsapp-btn" onclick="sendWhatsApp(event)">Order via WhatsApp</a>
 
-  <!-- 6. Comment Section -->
+  <!-- Comment Section -->
   <div class="comment-section">
     <div class="section-title">Leave a Comment:</div>
     <textarea id="comment-input" class="comment-box" rows="2" placeholder="Write your comment here..."></textarea>
