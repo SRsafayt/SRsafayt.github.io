@@ -62,7 +62,7 @@ none; border-radius: 8px; margin-top: 20px; font-size: 16px; }
 
   <!-- Color Selection -->
   <div class="section-title">Select Color & Quantity:</div>
-  <div class="selection-grid">
+  <div class="selection grid -color grid">
     <div class="selection-item">
       <span class="item-label">Black</span>
       <div class="qty-controls">
