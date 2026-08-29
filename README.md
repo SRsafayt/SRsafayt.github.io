@@ -41,7 +41,7 @@ none; border-radius: 8px; margin-top: 20px; font-size: 16px; }
 <body>
 
 <div class="catalog-container">
-  <h1>DUBAI ABAYA FASHION</h1>
+  <h1> <i> abaya and burqa fashion </i> </h1>
 
   <div class="product-card" id="product-1">
     <div class="media-box">
