@@ -41,7 +41,13 @@ none; border-radius: 8px; margin-top: 20px; font-size: 16px; }
 <body>
 
 <div class="catalog-container">
-  <h1> <i> abaya and burqa fashion </i> </h1>
+  <h1> 
+  <a href="https://www.instagram.com/abaya_and_burqa_fashion/" target="_blank" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 8px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" style="width: 24px; height: 24px; vertical-align: middle;">
+    abaya and burqa fashion
+  </a>
+
+<i> abaya and burqa fashion </i> </h1>
 
   <div class="product-card" id="product-1">
     <div class="media-box">
