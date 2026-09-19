@@ -12,22 +12,22 @@
 
 <div class="video-gallery">
 
-  https://github.com/user-attachments/assets/100cf9a3-ca32-4138-b0d7-423e0255be51
+ 
   <video width="100%" autoplay loop muted playsinline controls>
     <source src="https://github.com/user-attachments/assets/a175cb1e-7459-4183-b189-309a416fa48f" type="video/mp4">
   </video>
 
-  https://github.com/user-attachments/assets/cb7c7f0a-d6ea-44c2-b6ee-7c536f92d0df
+  
   <video width="100%" autoplay loop muted playsinline controls>
     <source src="https://github.com/user-attachments/assets/cb7c7f0a-d6ea-44c2-b6ee-7c536f92d0df" type="video/mp4">
   </video>
 
-  https://github.com/user-attachments/assets/e522f975-166d-4d23-b97a-36373ab8ec16
+  
   <video width="100%" autoplay loop muted playsinline controls>
     <source src="https://github.com/user-attachments/assets/100cf9a3-ca32-4138-b0d7-423e0255be51" type="video/mp4">
   </video>
 
-  https://github.com/user-attachments/assets/98190d8c-9fae-4271-aa0e-485dc43a979e
+  
 
   <video width="100%" autoplay loop muted playsinline controls>
     <source src="https://github.com/user-attachments/assets/98190d8c-9fae-4271-aa0e-485dc43a979e" type="video/mp4">
