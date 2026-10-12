@@ -1,22 +1,17 @@
 <img width="270" height="300" alt="IMG_2535" src="https://github.com/user-attachments/assets/520383a9-5c02-4bf4-af1c-ededf971cb20" />
 <img width="200" height="250" alt="IMG_2533" src="https://github.com/user-attachments/assets/b94e4e41-9d2e-4388-bcb1-160aef66a81b" />
 <img width="200" height="250" alt="image" src="https://github.com/user-attachments/assets/e8eea776-8e68-4fd0-bedf-ae7fb3967459" />
-<img width="200" height="250" alt="image" src="https://github.com/user-attachments/assets/b2c24488-016a-41fc-94c7-2192a6ce3de0" />
+<img width="200" height="250" alt="image" src="https://github.com/user-attachments/assets/b2c24488-016a-41fc-94c7-
+ <source map="100%" autoplay loop muted playsinline control>
+<source src ="https://github.com/user-attachments/assets/0670566f-a1b4-4e0c-a77b-8c4f098f4909 type="video/mp4"></video>
 
 
+<video width="100%" autoplay loop muted playsinline control>
+<source src="https://github.com/user-attachments/assets/0fd1d58a-e660-47e4-82cb-bac38934cdd5"type="video/mp4"></video>
 
 
-
-
-
-
-
-
-
-
-
-
-<div class="video-gallery">
+<video width="100%" autoplay loop muted playsinline controls>
+<source src="https://github.com/user-attachments/assets/34274758-4ec6-4b9b-a806-89b2ce93079d" type="video/mp4"></video>
 
  
   <video width="100%" autoplay loop muted playsinline controls>
