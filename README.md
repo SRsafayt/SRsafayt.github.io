@@ -3,7 +3,7 @@
 <img width="200" height="250" alt="image" src="https://github.com/user-attachments/assets/e8eea776-8e68-4fd0-bedf-ae7fb3967459" />
 <img width="200" height="250" alt="image" src="https://github.com/user-attachments/assets/b2c24488-016a-41fc-94c7" />
  <source map="100%" autoplay loop muted playsinline control>
-<source src ="https://github.com/user-attachments/assets/0670566f-a1b4-4e0c-a77b-8c4f098f4909 type="video/mp4"></video>
+<video <source src ="https://github.com/user-attachments/assets/0670566f-a1b4-4e0c-a77b-8c4f098f4909" type="video/mp4"></video>
 
 
 <video width="100%" autoplay loop muted playsinline control>
