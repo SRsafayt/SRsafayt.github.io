@@ -36,7 +36,7 @@
     <source src="https://github.com/user-attachments/assets/98190d8c-9fae-4271-aa0e-485dc43a979e" type="video/mp4">
   </video>
 
-<img width="300" height="350" alt="IMG_2521" src="https://github.com/user-attachments/assets/a8b5aad4-cee3-44b6-9ce6-18b872526c02" />
+<img width="800" height="1000" alt="IMG_2521" src="https://github.com/user-attachments/assets/a8b5aad4-cee3-44b6-9ce6-18b872526c02" />
 
 
 
